@@ -251,6 +251,20 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RentAMovie.Data\RentAMovie.Data.csproj">
+      <Project>{6a963770-2020-4836-86d3-f89f44b515ec}</Project>
+      <Name>RentAMovie.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RentAMovie.Models\RentAMovie.Models.csproj">
+      <Project>{c8ca39f4-cb30-4c0a-b780-55c75ac66fb9}</Project>
+      <Name>RentAMovie.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RentAMovie.Services\RentAMovie.Services.csproj">
+      <Project>{df3b8424-5c2a-42b1-a638-160d816e2b67}</Project>
+      <Name>RentAMovie.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
