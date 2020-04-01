@@ -24,6 +24,10 @@ namespace RentAMovie.Data
         public int MovieId { get; set; }
         public virtual Movie Movie { get; set; }
 
+        [ForeignKey(nameof(Game))]
+        public int GameId { get; set; }
+        public virtual Game Game { get; set; }
+
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
 

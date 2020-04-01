@@ -5,13 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RentAMovie.Data
+namespace RentAMovie.Models.CustomerModels
 {
-    public class Customer
+    public class CustomerCreate
     {
-        [Key]
-        public int CustomerId { get; set; }
-
         [Required]
         public string FirstName { get; set; }
 
@@ -23,13 +20,5 @@ namespace RentAMovie.Data
 
         [Required]
         public string Email { get; set; }
-
-        public virtual ICollection<Rental> Rentals { get; set; }
-
-        [Required]
-        public DateTimeOffset CreatedUtc { get; set; }
-
-        public DateTimeOffset? ModifiedUtc { get; set; }
-
     }
 }

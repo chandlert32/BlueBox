@@ -21,8 +21,11 @@ namespace RentAMovie.Data
         [Required]
         public string Description { get; set; }
 
+        [Required]
+        public DateTime Year { get;set; }
 
-        public virtual ICollection<Rating> Ratings { get; set; }
+
+        public virtual ICollection<MovieRating> Ratings { get; set; }
         public virtual ICollection<Rental> Rentals { get; set; }
 
         [Required]

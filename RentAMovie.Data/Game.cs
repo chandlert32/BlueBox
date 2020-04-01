@@ -7,23 +7,30 @@ using System.Threading.Tasks;
 
 namespace RentAMovie.Data
 {
-    public class Customer
+    public class Game
     {
         [Key]
-        public int CustomerId { get; set; }
+        public int GameId { get; set; }
 
         [Required]
-        public string FirstName { get; set; }
+        public string Title { get; set; }
 
         [Required]
-        public string LastName { get; set; }
+        public string Type { get; set; }
 
         [Required]
-        public int Phone { get; set; }
+        public int Player { get; set; }
 
         [Required]
-        public string Email { get; set; }
+        public bool Online { get; set; }
 
+        [Required]
+        public string Description { get; set; }
+
+        [Required]
+        public DateTime Year { get; set; }
+
+        public virtual ICollection<GameRating> Ratings { get; set; }
         public virtual ICollection<Rental> Rentals { get; set; }
 
         [Required]

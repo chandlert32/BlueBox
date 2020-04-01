@@ -13,7 +13,7 @@ namespace RentAMovie.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202003312202160_migration"; }
+            get { return "202004010041113_migration"; }
         }
         
         string IMigrationMetadata.Source

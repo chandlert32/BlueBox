@@ -55,15 +55,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Customer.cs" />
+    <Compile Include="Game.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202003312202160_migration.cs" />
-    <Compile Include="Migrations\202003312202160_migration.Designer.cs">
-      <DependentUpon>202003312202160_migration.cs</DependentUpon>
+    <Compile Include="Migrations\202004010041113_migration.cs" />
+    <Compile Include="Migrations\202004010041113_migration.Designer.cs">
+      <DependentUpon>202004010041113_migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rating.cs" />
+    <Compile Include="Ratings.cs" />
     <Compile Include="Rental.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -71,8 +72,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202003312202160_migration.resx">
-      <DependentUpon>202003312202160_migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004010041113_migration.resx">
+      <DependentUpon>202004010041113_migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

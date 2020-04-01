@@ -28,15 +28,20 @@ namespace RentAMovie.WebMVC.Models
         {
         }
 
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Movie> Movies { get; set; }
+        public DbSet<MovieRating> MovieRatings { get; set; }
+        public DbSet<Game> Games { get; set; }
+        public DbSet<GameRating> GameRatings { get; set; }
+        public DbSet<Rating> Ratings { get; set; }
+        public DbSet<Rental> Rentals { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
 
-        public DbSet<Customer> Customers { get; set; }
-        public DbSet<Movie> Movies { get; set; }
-        public DbSet<Rating> Ratings { get; set; }
-        public DbSet<Rental> Rentals { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
