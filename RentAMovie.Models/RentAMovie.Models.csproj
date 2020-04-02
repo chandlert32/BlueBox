@@ -60,6 +60,8 @@
     <Compile Include="GameModels\GameCreate.cs" />
     <Compile Include="GameModels\GameDetail.cs" />
     <Compile Include="GameModels\GameListItem.cs" />
+    <Compile Include="MovieModels\MovieCreate.cs" />
+    <Compile Include="MovieModels\MovieDetail.cs" />
     <Compile Include="MovieModels\MovieListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RatingModels\Game\GameRatingListItem.cs" />

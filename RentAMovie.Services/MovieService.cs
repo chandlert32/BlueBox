@@ -1,6 +1,6 @@
 ﻿using RentAMovie.Data;
-using RentAMovie.Models.GameModels;
-using RentAMovie.Models.RatingModels.Game;
+using RentAMovie.Models.MovieModels;
+using RentAMovie.Models.RatingModels.Movie;
 using RentAMovie.Models.RentalModels;
 using System;
 using System.Collections.Generic;
@@ -11,79 +11,73 @@ using System.Threading.Tasks;
 
 namespace RentAMovie.Services
 {
-    public class GameService
+    public class MovieService
     {
         private readonly ApplicationDbContext _context;
         private readonly string _userID;
 
-        public GameService(string userID) /* DEPENDENDCY INJECTION */
+        public MovieService(string userID) /* DEPENDENDCY INJECTION */
         {
             _context = new ApplicationDbContext();
             _userID = userID;
         }
 
         // CREATE
-        public async Task<bool> CreateGameAsyc (GameCreate model)
+        public async Task<bool> CreateMovieAsyc(MovieCreate model)
         {
-            Game entity = new Game
+            Movie entity = new Movie
             {
-                GameTitle = model.GameTitle,
-                Type = model.Type,
-                Player = model.Player,
-                Online = model.Online,
-                GameDescription = model.GameDescription,
-                //Year = model.Year,
+                MovieTitle = model.MovieTitle,
+                Genre = model.Genre,
+                MovieDescription = model.MovieDescription,
             };
 
-            _context.Games.Add(entity);
+            _context.Movies.Add(entity);
             var changeCount = await _context.SaveChangesAsync();
             return changeCount == 1;
         }
 
         // GET ALL
-        public async Task<List<GameListItem>> GetAllGamesAsync()
+        public async Task<List<MovieListItem>> GetAllMoviesAsync()
         {
-            // Get all games from db (Game)
-            var entityList = await _context.Games.ToListAsync();
+            // Get all games from db (Movie)
+            var entityList = await _context.Movies.ToListAsync();
 
-            // Turn the Games into GameListItems
-            var gameList = entityList.Select(game => new GameListItem
+            // Turn the Movies into MovieListItems
+            var movieList = entityList.Select(movie => new MovieListItem
             {
-                GameId = game.GameId,
-                GameTitle = game.GameTitle,
-                Type = game.Type,
-                AverageRating = game.AverageRating,
-                RentalCount = game.Rentals.Count
+                MovieId = movie.MovieId,
+                MovieTitle = movie.MovieTitle,
+                Genre = movie.Genre,
+                AverageRating = movie.AverageRating,
+                RentalCount = movie.Rentals.Count
             }).ToList();
 
             // return changed list
-            return gameList;
+            return movieList;
         }
 
         // GET BY ID
-        public async Task<GameDetail> GetGameByIdAsync(int gameId)
+        public async Task<MovieDetail> GetMovieByIdAsync(int movieId)
         {
             // Search Database by ID for Game
-            var entity = await _context.Games.FindAsync(gameId);
+            var entity = await _context.Movies.FindAsync(movieId);
             if (entity == null)
                 // throw new Exception("No game found.");
                 return null;
 
             // Turn the entity into the Detail
-            var model = new GameDetail
+            var model = new MovieDetail
             {
-                GameId = entity.GameId,
-                GameTitle = entity.GameTitle,
-                Type = entity.Type,
-                Player = entity.Player,
-                Online = entity.Online,
-                GameDescription = entity.GameDescription,
+                MovieId = entity.MovieId,
+                MovieTitle = entity.MovieTitle,
+                Genre = entity.Genre,
+                MovieDescription = entity.MovieDescription,
                 Rentals = entity.Rentals.Select(rental => new RentalListItem
                 {
                     RentalId = rental.RentalId,
                     //DayOfReturn = rental.DayOfReturn,
                 }).ToList()
-
                 //Year = entity.Year,
                 //Ratings = entity.Ratings,
                 //Rentals = entity.Rentals,
@@ -92,11 +86,11 @@ namespace RentAMovie.Services
 
             foreach (var rating in entity.Ratings)
             {
-                model.Ratings.Add(new GameRatingListItem
+                model.Ratings.Add(new MovieRatingListItem
                 {
                     RatingId = rating.RatingId,
-                    GameId = entity.GameId,
-                    GameTitle = entity.GameTitle,
+                    MovieId = entity.MovieId,
+                    MovieTitle = entity.MovieTitle,
                     Description = rating.Description,
                     IsUserOwned = rating.UserId == _userID,
                     Score = rating.Score,
