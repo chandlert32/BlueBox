@@ -14,7 +14,8 @@ namespace RentAMovie.Models.MovieModels
         public string MovieTitle { get; set; }
         public string Genre { get; set; }
         public string MovieDescription { get; set; }
-        public List<MovieRatingListItem> Ratings { get; set; }
-        public List<RentalListItem> Rentals { get; set; }
+        public DateTime Year { get; set; }
+        public List<MovieRatingListItem> Ratings { get; set; } = new List<MovieRatingListItem>();
+        public List<RentalListItem> Rentals { get; set; } = new List<RentalListItem>();
     }
 }

@@ -240,6 +240,8 @@
     <Content Include="Views\Game\Create.cshtml" />
     <Content Include="Views\Movie\Create.cshtml" />
     <Content Include="Views\Movie\Index.cshtml" />
+    <Content Include="Views\Game\Rate.cshtml" />
+    <Content Include="Views\Game\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

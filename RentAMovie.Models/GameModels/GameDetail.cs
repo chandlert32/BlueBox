@@ -1,6 +1,7 @@
 ﻿using RentAMovie.Models.RentalModels;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,8 @@ namespace RentAMovie.Models.RatingModels.Game
         public string GameDescription { get; set; }
         public DateTime Year { get; set; }
 
-        public List<GameRatingListItem> Ratings { get; set; }
-        public List<RentalListItem> Rentals { get; set; }
+        public List<GameRatingListItem> Ratings { get; set; } = new List<GameRatingListItem>();
+        public List<RentalListItem> Rentals { get; set; } = new List<RentalListItem>();
+
     }
 }

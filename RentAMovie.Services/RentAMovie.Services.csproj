@@ -58,6 +58,7 @@
     <Compile Include="GameService.cs" />
     <Compile Include="MovieService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RatingService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

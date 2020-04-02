@@ -17,5 +17,7 @@ namespace RentAMovie.Models.MovieModels
 
         [Required]
         public string MovieDescription { get; set; }
+
+        //public DateTime Year { get; set; }
     }
 }

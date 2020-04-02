@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using RentAMovie.Models.GameModels;
+using RentAMovie.Models.RatingModels.Game;
 using RentAMovie.Services;
 using System;
 using System.Collections.Generic;
@@ -43,11 +44,56 @@ namespace RentAMovie.WebMVC.Controllers
             return View(model);
         }
 
+        // GET: Game/detail/id
+        public async Task<ActionResult> Details(int id)
+        {
+            var svc = GetGameService();
+            var model = await svc.GetGameByIdAsync(id);
+
+            return View(model);
+        }
+
+        // GET: Game/edit
+        // POST: Game/edit
+
+        // GET: Game/Rate/id
+        [HttpGet]
+        [Authorize]
+        public async Task<ActionResult> Rate(int id)
+        {
+            var service = GetGameService();
+            ViewBag.Detail = await service.GetGameByIdAsync(id);
+
+            var model = new GameRatingCreate { GameId = id };
+            return View(model);
+        }
+
+        // POST: Game/Rate/id
+        [HttpPost]
+        [Authorize]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Rate(GameRatingCreate model)
+        {
+            if (ModelState.IsValid)
+            {
+                var service = new RatingService(User.Identity.GetUserId());
+                if (await service.CreateGameRatingAsync(model))
+                {
+                    return RedirectToAction(nameof(Index));
+                }
+            }
+
+            return View(model);
+        }
+
+
         private GameService GetGameService()
         {
             var userId = User.Identity.GetUserId();
             var service = new GameService(userId);
             return service;
         }
+
+        
     }
 }
