@@ -24,6 +24,6 @@ namespace RentAMovie.Models.GameModels
         [Required]
         public string GameDescription { get; set; }
 
-        public DateTime Year { get; set; }
+        //public DateTime Year { get; set; }
     }
 }
