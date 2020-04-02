@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
+using RentAMovie.Data;
 using RentAMovie.WebMVC.Models;
 
 namespace RentAMovie.WebMVC

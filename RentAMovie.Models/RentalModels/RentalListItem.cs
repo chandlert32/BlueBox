@@ -6,16 +6,21 @@ using System.Threading.Tasks;
 
 namespace RentAMovie.Models.RentalModels
 {
-    class RentalListItem
+    public class RentalListItem
     {
         public int RentalId { get; set; }
+        public DateTime DayOfReturn { get; set; }
 
-        public string Title { get; set; }
+
+        //NEED TO GET CUSTOMER: 
+        /*public string Title { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public int Phone { get; set; }
+        public int Phone { get; set; }*/
+        
+        //NEED TO GET MOVIE:
 
-        public DateTime DayOfReturn { get; set; }
+        //NEED TO GET GAME:
 
 
     }

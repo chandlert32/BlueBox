@@ -13,7 +13,7 @@ namespace RentAMovie.Data
         public int GameId { get; set; }
 
         [Required]
-        public string Title { get; set; }
+        public string GameTitle { get; set; }
 
         [Required]
         public string Type { get; set; }
@@ -25,13 +25,24 @@ namespace RentAMovie.Data
         public bool Online { get; set; }
 
         [Required]
-        public string Description { get; set; }
+        public string GameDescription { get; set; }
 
         [Required]
         public DateTime Year { get; set; }
 
-        public virtual ICollection<GameRating> Ratings { get; set; }
-        public virtual ICollection<Rental> Rentals { get; set; }
+        public double AverageRating
+        {
+            get
+            {
+                if (Ratings != null && Ratings.Count != 0)
+                    return (double)Ratings.Sum(rating => rating.Score) / Ratings.Count;
+
+                return 0;
+            }
+        }
+
+        public virtual ICollection<GameRating> Ratings { get; set; } = new List<GameRating>();
+        public virtual ICollection<Rental> Rentals { get; set; } = new List<Rental>();
 
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }

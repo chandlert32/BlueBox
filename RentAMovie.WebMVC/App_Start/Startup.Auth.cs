@@ -5,6 +5,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
+using RentAMovie.Data;
 using RentAMovie.WebMVC.Models;
 
 namespace RentAMovie.WebMVC

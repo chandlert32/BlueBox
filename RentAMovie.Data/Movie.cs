@@ -13,17 +13,27 @@ namespace RentAMovie.Data
         public int MovieId { get; set; }
 
         [Required]
-        public string Title { get; set; }
+        public string MovieTitle { get; set; }
 
         [Required]
         public string Genre { get; set; }
 
         [Required]
-        public string Description { get; set; }
+        public string MovieDescription { get; set; }
 
         [Required]
         public DateTime Year { get;set; }
 
+        public double AverageRating
+        {
+            get
+            {
+                if (Ratings != null && Ratings.Count != 0)
+                    return (double)Ratings.Sum(rating => rating.Score) / Ratings.Count;
+
+                return 0;
+            }
+        }
 
         public virtual ICollection<MovieRating> Ratings { get; set; }
         public virtual ICollection<Rental> Rentals { get; set; }

@@ -16,6 +16,9 @@ namespace RentAMovie.Models.CustomerModels
         public string LastName { get; set; }
 
         [Required]
+        public int Age { get; set; }
+
+        [Required]
         public int Phone { get; set; }
 
         [Required]

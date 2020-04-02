@@ -54,11 +54,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerService.cs" />
+    <Compile Include="GameService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RentAMovie.Data\RentAMovie.Data.csproj">
+      <Project>{6A963770-2020-4836-86D3-F89F44B515EC}</Project>
+      <Name>RentAMovie.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RentAMovie.Models\RentAMovie.Models.csproj">
+      <Project>{C8CA39F4-CB30-4C0A-B780-55C75AC66FB9}</Project>
+      <Name>RentAMovie.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

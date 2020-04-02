@@ -19,10 +19,15 @@ namespace RentAMovie.Data
         public string LastName { get; set; }
 
         [Required]
+        public int Age { get; set; }
+
+        [Required]
         public int Phone { get; set; }
 
         [Required]
         public string Email { get; set; }
+
+        //public DateTime Birthday? { get; set; }
 
         public virtual ICollection<Rental> Rentals { get; set; }
 

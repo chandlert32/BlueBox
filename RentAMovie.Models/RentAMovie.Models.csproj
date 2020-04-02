@@ -56,17 +56,21 @@
   <ItemGroup>
     <Compile Include="CustomerModels\CustomerCreate.cs" />
     <Compile Include="CustomerModels\CustomerDetail.cs" />
+    <Compile Include="CustomerModels\CustomerListItem.cs" />
+    <Compile Include="GameModels\GameCreate.cs" />
+    <Compile Include="GameModels\GameDetail.cs" />
+    <Compile Include="GameModels\GameListItem.cs" />
+    <Compile Include="MovieModels\MovieListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RatingModels\Game\GameRatingListItem.cs" />
+    <Compile Include="RatingModels\Movie\MovieRatingListItem.cs" />
+    <Compile Include="RatingModels\RatingListItem.cs" />
     <Compile Include="RentalModels\RentalListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GameModels\" />
-    <Folder Include="MovieModels\" />
-    <Folder Include="RatingModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
