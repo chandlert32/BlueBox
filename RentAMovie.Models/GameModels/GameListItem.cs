@@ -10,6 +10,8 @@ namespace RentAMovie.Models.GameModels
     public class GameListItem
     {
         public int GameId { get; set; }
+
+        [Display(Name = "Title")]
         public string GameTitle { get; set; }
         public string Type { get; set; }
 

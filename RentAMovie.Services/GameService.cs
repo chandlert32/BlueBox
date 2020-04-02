@@ -31,7 +31,7 @@ namespace RentAMovie.Services
                 Player = model.Player,
                 Online = model.Online,
                 GameDescription = model.GameDescription,
-                Year = model.Year,
+                //Year = model.Year,
             };
 
             _context.Games.Add(entity);
@@ -77,7 +77,7 @@ namespace RentAMovie.Services
                 Player = entity.Player,
                 Online = entity.Online,
                 GameDescription = entity.GameDescription,
-                Year = entity.Year,
+                //Year = entity.Year,
                 //Rentals = entity.Rentals,
 
             };

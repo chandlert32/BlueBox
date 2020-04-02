@@ -24,10 +24,6 @@ namespace RentAMovie.Data
         public int CustomerId { get; set; }
         public virtual Customer Customer { get; set; }*/
 
-        [Required]
-        public DateTimeOffset CreatedUtc { get; set; }
-
-        public DateTimeOffset? ModifiedUtc { get; set; }
 
     }
 

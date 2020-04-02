@@ -27,10 +27,5 @@ namespace RentAMovie.Data
         [ForeignKey(nameof(Game))]
         public int GameId { get; set; }
         public virtual Game Game { get; set; }
-
-        [Required]
-        public DateTimeOffset CreatedUtc { get; set; }
-
-        public DateTimeOffset? ModifiedUtc { get; set; }
     }
 }

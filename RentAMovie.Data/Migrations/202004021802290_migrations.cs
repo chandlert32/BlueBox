@@ -3,7 +3,7 @@ namespace RentAMovie.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class migration : DbMigration
+    public partial class migrations : DbMigration
     {
         public override void Up()
         {
@@ -31,8 +31,6 @@ namespace RentAMovie.Data.Migrations
                         CustomerId = c.Int(nullable: false),
                         MovieId = c.Int(nullable: false),
                         GameId = c.Int(nullable: false),
-                        CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
-                        ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })
                 .PrimaryKey(t => t.RentalId)
                 .ForeignKey("dbo.Customer", t => t.CustomerId, cascadeDelete: true)
@@ -52,9 +50,6 @@ namespace RentAMovie.Data.Migrations
                         Player = c.Int(nullable: false),
                         Online = c.Boolean(nullable: false),
                         GameDescription = c.String(nullable: false),
-                        Year = c.DateTime(nullable: false),
-                        CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
-                        ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })
                 .PrimaryKey(t => t.GameId);
             
@@ -66,8 +61,6 @@ namespace RentAMovie.Data.Migrations
                         Score = c.Int(nullable: false),
                         Description = c.String(nullable: false),
                         UserId = c.String(maxLength: 128),
-                        CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
-                        ModifiedUtc = c.DateTimeOffset(precision: 7),
                         GameId = c.Int(),
                         MovieId = c.Int(),
                         Discriminator = c.String(nullable: false, maxLength: 128),
@@ -149,9 +142,6 @@ namespace RentAMovie.Data.Migrations
                         MovieTitle = c.String(nullable: false),
                         Genre = c.String(nullable: false),
                         MovieDescription = c.String(nullable: false),
-                        Year = c.DateTime(nullable: false),
-                        CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
-                        ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })
                 .PrimaryKey(t => t.MovieId);
             
