@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace RentAMovie.Models.CustomerModels
 {
-    public class CustomerCreate
+    public class CustomerEdit
     {
+        public int CustomerId { get; set; }
+
         [Required]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
@@ -16,14 +18,8 @@ namespace RentAMovie.Models.CustomerModels
         [Required]
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
-
-        [Required]
         public int Age { get; set; }
-
-        [Required]
         public int Phone { get; set; }
-
-        [Required]
         public string Email { get; set; }
     }
 }
