@@ -23,7 +23,7 @@ namespace RentAMovie.Services
         }
 
         // CREATE
-        public async Task<bool> CreateGameAsyc (GameCreate model)
+        public async Task<bool> CreateGameAsyc(GameCreate model)
         {
             Game entity = new Game
             {
@@ -105,6 +105,25 @@ namespace RentAMovie.Services
 
             // return the detail model
             return model;
+        }
+
+        // EDIT 
+        public bool UpdateGame(GameEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Games
+                        .Single(e => e.GameId == model.GameId);
+
+                entity.GameTitle = model.GameTitle;
+                entity.Type = model.Type;
+                entity.Player = model.Player;
+                entity.Online = model.Online;
+
+                return ctx.SaveChanges() == 1;
+            }
         }
     }
 }

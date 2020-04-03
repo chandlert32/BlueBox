@@ -59,6 +59,7 @@
     <Compile Include="CustomerModels\CustomerListItem.cs" />
     <Compile Include="GameModels\GameCreate.cs" />
     <Compile Include="GameModels\GameDetail.cs" />
+    <Compile Include="GameModels\GameEdit.cs" />
     <Compile Include="GameModels\GameListItem.cs" />
     <Compile Include="MovieModels\MovieCreate.cs" />
     <Compile Include="MovieModels\MovieDetail.cs" />

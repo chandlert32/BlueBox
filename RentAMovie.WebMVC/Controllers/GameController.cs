@@ -54,6 +54,22 @@ namespace RentAMovie.WebMVC.Controllers
         }
 
         // GET: Game/edit
+        public async Task<ActionResult> Edit(int id)
+        {
+            var service = GetGameService();
+            var detail = await service.GetGameByIdAsync(id);
+            var model =
+                new GameEdit
+                {
+                    GameId = detail.GameId,
+                    GameTitle = detail.GameTitle,
+                    Type = detail.Type,
+                    Player = detail.Player,
+                    Online = detail.Online,
+                    GameDescription = detail.GameDescription
+                };
+            return View(model);
+        }
         // POST: Game/edit
 
         // GET: Game/Rate/id
