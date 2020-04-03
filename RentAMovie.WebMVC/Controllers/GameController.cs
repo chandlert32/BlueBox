@@ -70,7 +70,32 @@ namespace RentAMovie.WebMVC.Controllers
                 };
             return View(model);
         }
+
         // POST: Game/edit
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, GameEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.GameId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = GetGameService();
+
+            if (service.UpdateGame(model))
+            {
+                TempData["SaveResult"] = "Your note was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your note could not be updated.");
+            return View(model);
+        }
+
 
         // GET: Game/Rate/id
         [HttpGet]
@@ -102,14 +127,6 @@ namespace RentAMovie.WebMVC.Controllers
             return View(model);
         }
 
-
-        private GameService GetGameService()
-        {
-            var userId = User.Identity.GetUserId();
-            var service = new GameService(userId);
-            return service;
-        }
-
         // GET: Delete
         [ActionName("Delete")]
         public async Task<ActionResult> Delete(int id)
@@ -133,6 +150,13 @@ namespace RentAMovie.WebMVC.Controllers
             TempData["SaveResult"] = "Your note was deleted";
 
             return RedirectToAction("Index");
+        }
+        
+        private GameService GetGameService()
+        {
+            var userId = User.Identity.GetUserId();
+            var service = new GameService(userId);
+            return service;
         }
     }
 }

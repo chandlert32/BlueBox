@@ -1,5 +1,6 @@
 ﻿using RentAMovie.Data;
 using RentAMovie.Models.RatingModels.Game;
+using RentAMovie.Models.RatingModels.Movie;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,5 +37,19 @@ namespace RentAMovie.Services
         }
 
         // Rate a Movie
+        public async Task<bool> CreateMovieRatingAsync(MovieRatingCreate model)
+        {
+            var entity = new MovieRating
+            {
+                MovieId = model.MovieId,
+                Score = model.Score,
+                Description = model.Description,
+                UserId = _userID,
+            };
+
+            _context.Ratings.Add(entity);
+            var changeCount = await _context.SaveChangesAsync();
+            return changeCount == 1;
+        }
     }
 }

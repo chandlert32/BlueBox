@@ -121,6 +121,7 @@ namespace RentAMovie.Services
                 entity.Type = model.Type;
                 entity.Player = model.Player;
                 entity.Online = model.Online;
+                entity.GameDescription = model.GameDescription;
 
                 return ctx.SaveChanges() == 1;
             }

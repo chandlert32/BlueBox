@@ -100,5 +100,39 @@ namespace RentAMovie.Services
             // return the detail model
             return model;
         }
+
+        // EDIT 
+        public bool UpdateMovie(MovieEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Movies
+                        .Single(e => e.MovieId == model.MovieId);
+
+                entity.MovieTitle = model.MovieTitle;
+                entity.Genre = model.Genre;
+                entity.MovieDescription = model.MovieDescription;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        // DELETE
+        public bool DeleteMovie(int movieId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Movies
+                        .Single(e => e.MovieId == movieId);
+
+                ctx.Movies.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

@@ -244,6 +244,10 @@
     <Content Include="Views\Game\Details.cshtml" />
     <Content Include="Views\Game\Edit.cshtml" />
     <Content Include="Views\Game\Delete.cshtml" />
+    <Content Include="Views\Movie\Details.cshtml" />
+    <Content Include="Views\Movie\Edit.cshtml" />
+    <Content Include="Views\Movie\Rate.cshtml" />
+    <Content Include="Views\Movie\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
