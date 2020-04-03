@@ -30,6 +30,7 @@ namespace RentAMovie.Services
                 MovieTitle = model.MovieTitle,
                 Genre = model.Genre,
                 MovieDescription = model.MovieDescription,
+                CreatedUtc = DateTimeOffset.Now
             };
 
             _context.Movies.Add(entity);

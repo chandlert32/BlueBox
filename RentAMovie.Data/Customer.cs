@@ -31,10 +31,6 @@ namespace RentAMovie.Data
 
         public virtual ICollection<Rental> Rentals { get; set; }
 
-        [Required]
         public DateTimeOffset CreatedUtc { get; set; }
-
-        public DateTimeOffset? ModifiedUtc { get; set; }
-
     }
 }

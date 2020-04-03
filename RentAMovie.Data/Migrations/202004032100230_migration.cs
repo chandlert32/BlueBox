@@ -3,7 +3,7 @@ namespace RentAMovie.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class migrations : DbMigration
+    public partial class migration : DbMigration
     {
         public override void Up()
         {
@@ -18,7 +18,6 @@ namespace RentAMovie.Data.Migrations
                         Phone = c.Int(nullable: false),
                         Email = c.String(nullable: false),
                         CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
-                        ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })
                 .PrimaryKey(t => t.CustomerId);
             
@@ -50,6 +49,7 @@ namespace RentAMovie.Data.Migrations
                         Player = c.Int(nullable: false),
                         Online = c.Boolean(nullable: false),
                         GameDescription = c.String(nullable: false),
+                        CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
                     })
                 .PrimaryKey(t => t.GameId);
             
@@ -142,6 +142,7 @@ namespace RentAMovie.Data.Migrations
                         MovieTitle = c.String(nullable: false),
                         Genre = c.String(nullable: false),
                         MovieDescription = c.String(nullable: false),
+                        CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
                     })
                 .PrimaryKey(t => t.MovieId);
             

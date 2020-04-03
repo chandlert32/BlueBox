@@ -22,5 +22,11 @@ namespace RentAMovie.Models.GameModels
         public int RentalCount { get; set; }
 
         //For what Console?
+
+        [Display(Name = "Created")]
+        public DateTimeOffset CreatedUtc { get; set; }
+
+        [Display(Name = "Modified")]
+        public DateTimeOffset? ModifiedUtc { get; set; }
     }
 }
