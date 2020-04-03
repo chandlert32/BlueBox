@@ -10,12 +10,14 @@ namespace RentAMovie.Models.MovieModels
     public class MovieCreate
     {
         [Required]
+        [Display(Name = "Title")]
         public string MovieTitle { get; set; }
 
         [Required]
         public string Genre { get; set; }
 
         [Required]
+        [Display(Name = "Description")]
         public string MovieDescription { get; set; }
 
         //public DateTime Year { get; set; }

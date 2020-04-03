@@ -10,6 +10,7 @@ namespace RentAMovie.Models.GameModels
     public class GameCreate
     {
         [Required]
+        [Display(Name = "Title")]
         public string GameTitle { get; set; }
 
         [Required]
@@ -22,6 +23,7 @@ namespace RentAMovie.Models.GameModels
         public bool Online { get; set; }
 
         [Required]
+        [Display(Name = "Game Description")]
         public string GameDescription { get; set; }
 
         //public DateTime Year { get; set; }

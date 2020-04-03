@@ -37,5 +37,6 @@ namespace RentAMovie.Data
         public virtual ICollection<MovieRating> Ratings { get; set; }
         public virtual ICollection<Rental> Rentals { get; set; }
         public DateTimeOffset CreatedUtc { get; set; }
+        public DateTimeOffset? Modified { get; set; }
     }
 }

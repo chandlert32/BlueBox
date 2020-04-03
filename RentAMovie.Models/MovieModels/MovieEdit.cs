@@ -11,7 +11,7 @@ namespace RentAMovie.Models.MovieModels
     {
         public int MovieId { get; set; }
 
-        [Display(Name = "Movie Title")]
+        [Display(Name = "Title")]
         public string MovieTitle { get; set; }
 
         public string Genre { get; set; }

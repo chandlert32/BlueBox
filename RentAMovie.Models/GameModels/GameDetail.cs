@@ -11,10 +11,14 @@ namespace RentAMovie.Models.RatingModels.Game
     public class GameDetail
     {
         public int GameId {get;set;}
+
+        [Display(Name = "Title")]
         public string GameTitle { get; set; }
         public string Type { get; set; }
         public int Player { get; set; }
         public bool Online { get; set; }
+
+        [Display(Name = "Description")]
         public string GameDescription { get; set; }
         public DateTime Year { get; set; }
 
