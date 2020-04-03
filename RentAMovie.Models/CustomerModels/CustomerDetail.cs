@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RentAMovie.Models.CustomerModels
 {
-    class CustomerDetail
+    public class CustomerDetail
     {
         public int CustomerId { get; set; }
 
