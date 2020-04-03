@@ -125,5 +125,21 @@ namespace RentAMovie.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        // DELETE
+        public bool DeleteGame(int gameId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Games
+                        .Single(e => e.GameId == gameId);
+
+                ctx.Games.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

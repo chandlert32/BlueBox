@@ -110,6 +110,29 @@ namespace RentAMovie.WebMVC.Controllers
             return service;
         }
 
-        
+        // GET: Delete
+        [ActionName("Delete")]
+        public async Task<ActionResult> Delete(int id)
+        {
+            var svc = GetGameService();
+            var model = await svc.GetGameByIdAsync(id);
+
+            return View(model);
+        }
+
+        // POST: Delete
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = GetGameService();
+
+            service.DeleteGame(id);
+
+            TempData["SaveResult"] = "Your note was deleted";
+
+            return RedirectToAction("Index");
+        }
     }
 }
