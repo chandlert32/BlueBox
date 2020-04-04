@@ -14,7 +14,9 @@ namespace RentAMovie.Models.GameModels
         public string GameTitle { get; set; }
 
         [Required]
-        public string Type { get; set; }
+        public string Console { get; set; }
+        [Required]
+        public string Genre { get; set; }
 
         [Required]
         public int Player { get; set; }

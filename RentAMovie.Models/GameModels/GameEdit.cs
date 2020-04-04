@@ -13,7 +13,8 @@ namespace RentAMovie.Models.GameModels
 
         [Display(Name = "Title")]
         public string GameTitle { get; set; }
-        public string Type { get; set; }
+        public string Console { get; set; }
+        public string Genre { get; set; }
         public int Player { get; set; }
         public bool Online { get; set; }
 

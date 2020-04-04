@@ -63,7 +63,8 @@ namespace RentAMovie.WebMVC.Controllers
                 {
                     GameId = detail.GameId,
                     GameTitle = detail.GameTitle,
-                    Type = detail.Type,
+                    Console = detail.Console,
+                    Genre = detail.Genre,
                     Player = detail.Player,
                     Online = detail.Online,
                     GameDescription = detail.GameDescription

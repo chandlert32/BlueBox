@@ -39,18 +39,19 @@ namespace RentAMovie.Services
         }
 
         // GET ALL
-        public async Task<List<CustomerListItem>> GetAllMoviesAsync()
+        public async Task<List<CustomerListItem>> GetAllCustomersAsync()
         {
-            // Get all games from db (Customer)
+            // Get all customers from db (Customer)
             var entityList = await _context.Customers.ToListAsync();
 
-            // Turn the Movies into CustomerListItems
+            // Turn the Customers into CustomerListItems
             var customerList = entityList.Select(customer => new CustomerListItem
             {
                 CustomerId = customer.CustomerId,
                 FirstName = customer.FirstName,
                 LastName = customer.LastName,
                 Phone = customer.Phone,
+                Email = customer.Email,
                 RentalCount = customer.Rentals.Count
             }).ToList();
 

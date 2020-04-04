@@ -28,7 +28,8 @@ namespace RentAMovie.Services
             Game entity = new Game
             {
                 GameTitle = model.GameTitle,
-                Type = model.Type,
+                Console = model.Console,
+                Genre = model.Genre,
                 Player = model.Player,
                 Online = model.Online,
                 GameDescription = model.GameDescription,
@@ -51,9 +52,10 @@ namespace RentAMovie.Services
             {
                 GameId = game.GameId,
                 GameTitle = game.GameTitle,
-                Type = game.Type,
+                Console = game.Console,
+                Genre = game.Genre,
                 AverageRating = game.AverageRating,
-                RentalCount = game.Rentals.Count
+                RentalCount = game.Rentals.Count,
             }).ToList();
 
             // return changed list
@@ -74,7 +76,8 @@ namespace RentAMovie.Services
             {
                 GameId = entity.GameId,
                 GameTitle = entity.GameTitle,
-                Type = entity.Type,
+                Console = entity.Console,
+                Genre = entity.Genre,
                 Player = entity.Player,
                 Online = entity.Online,
                 GameDescription = entity.GameDescription,
@@ -82,8 +85,10 @@ namespace RentAMovie.Services
                 {
                     RentalId = rental.RentalId,
                     //DayOfReturn = rental.DayOfReturn,
-                }).ToList()
-
+                }).ToList(),
+                CreatedUtc = entity.CreatedUtc,
+                Modified = entity.Modified
+                
                 //Year = entity.Year,
                 //Ratings = entity.Ratings,
                 //Rentals = entity.Rentals,
@@ -118,7 +123,8 @@ namespace RentAMovie.Services
                         .Single(e => e.GameId == model.GameId);
 
                 entity.GameTitle = model.GameTitle;
-                entity.Type = model.Type;
+                entity.Console = model.Console;
+                entity.Genre = model.Genre;
                 entity.Player = model.Player;
                 entity.Online = model.Online;
                 entity.GameDescription = model.GameDescription;

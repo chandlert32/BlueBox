@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace RentAMovie.Models.CustomerModels
 {
     public class CustomerListItem
-    {
+    { 
         public int CustomerId { get; set; }
 
         [Display(Name = "First Name")]
@@ -21,11 +21,5 @@ namespace RentAMovie.Models.CustomerModels
 
         [Display(Name = "Rental Count")]
         public int RentalCount { get; set; }
-
-        [Display(Name = "Created")]
-        public DateTimeOffset CreatedUtc { get; set; }
-
-        [Display(Name = "Modified")]
-        public DateTimeOffset? ModifiedUtc { get; set; }
     }
 }

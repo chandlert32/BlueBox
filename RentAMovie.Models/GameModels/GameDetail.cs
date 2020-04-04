@@ -14,7 +14,8 @@ namespace RentAMovie.Models.RatingModels.Game
 
         [Display(Name = "Title")]
         public string GameTitle { get; set; }
-        public string Type { get; set; }
+        public string Console { get; set; }
+        public string Genre { get; set; }
         public int Player { get; set; }
         public bool Online { get; set; }
 
@@ -24,6 +25,9 @@ namespace RentAMovie.Models.RatingModels.Game
 
         public List<GameRatingListItem> Ratings { get; set; } = new List<GameRatingListItem>();
         public List<RentalListItem> Rentals { get; set; } = new List<RentalListItem>();
+
+        public DateTimeOffset CreatedUtc { get; set; }
+        public DateTimeOffset? Modified { get; set; }
 
     }
 }
