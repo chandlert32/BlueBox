@@ -239,15 +239,11 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Movie\Create.cshtml" />
-    <Content Include="Views\Game\Rate.cshtml" />
     <Content Include="Views\Movie\Details.cshtml" />
     <Content Include="Views\Movie\Edit.cshtml" />
     <Content Include="Views\Movie\Rate.cshtml" />
     <Content Include="Views\Movie\Delete.cshtml" />
     <Content Include="Views\Customer\Delete.cshtml" />
-    <Content Include="Views\Game\Create.cshtml" />
-    <Content Include="Views\Game\Details.cshtml" />
-    <Content Include="Views\Game\Edit.cshtml" />
     <Content Include="Views\Game\Delete.cshtml" />
     <Content Include="Views\Rental\Delete.cshtml" />
     <Content Include="Views\Rental\Index.cshtml" />
@@ -259,6 +255,10 @@
     <Content Include="Views\Customer\Edit.cshtml" />
     <Content Include="Views\Game\Index.cshtml" />
     <Content Include="Views\Movie\Index.cshtml" />
+    <Content Include="Views\Game\Rate.cshtml" />
+    <Content Include="Views\Game\Create.cshtml" />
+    <Content Include="Views\Game\Edit.cshtml" />
+    <Content Include="Views\Game\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

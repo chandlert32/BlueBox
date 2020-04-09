@@ -26,7 +26,7 @@ namespace RentAMovie.WebMVC.Controllers
             return View();
         }
 
-        // POST: Movie/Create
+        // POST: Customer/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(CustomerCreate model)

@@ -1,4 +1,5 @@
-﻿using RentAMovie.Models.RentalModels;
+﻿using RentAMovie.Models.RatingModels.Game;
+using RentAMovie.Models.RentalModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -6,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RentAMovie.Models.RatingModels.Game
+namespace RentAMovie.Models.GameModels
 {
     public class GameDetail
     {

@@ -1,4 +1,4 @@
-﻿@model RentAMovie.Models.RatingModels.Game.GameDetail
+﻿@model RentAMovie.Models.GameModels.GameDetail
 
 @{
     ViewBag.Title = "Details";
@@ -93,6 +93,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.GameId }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.GameId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

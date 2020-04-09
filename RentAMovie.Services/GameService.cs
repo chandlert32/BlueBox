@@ -50,6 +50,7 @@ namespace RentAMovie.Services
             // Turn the Games into GameListItems
             var gameList = entityList.Select(game => new GameListItem
             {
+                GameId = game.GameId,
                 GameTitle = game.GameTitle,
                 Console = game.Console,
                 Genre = game.Genre,

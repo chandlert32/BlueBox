@@ -9,6 +9,8 @@ namespace RentAMovie.Models.MovieModels
 {
     public class MovieCreate
     {
+        public int MovieId { get; set; }
+
         [Required]
         [Display(Name = "Title")]
         public string MovieTitle { get; set; }
