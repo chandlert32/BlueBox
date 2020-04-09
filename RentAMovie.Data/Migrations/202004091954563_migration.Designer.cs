@@ -7,13 +7,13 @@ namespace RentAMovie.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class migraiton : IMigrationMetadata
+    public sealed partial class migration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(migraiton));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(migration));
         
         string IMigrationMetadata.Id
         {
-            get { return "202004042211526_migraiton"; }
+            get { return "202004091954563_migration"; }
         }
         
         string IMigrationMetadata.Source

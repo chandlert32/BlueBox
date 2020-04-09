@@ -13,10 +13,7 @@ namespace RentAMovie.Data
         public int CustomerId { get; set; }
 
         [Required]
-        public string FirstName { get; set; }
-
-        [Required]
-        public string LastName { get; set; }
+        public string FullName { get; set; }
 
         [Required]
         public int Age { get; set; }

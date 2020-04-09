@@ -10,6 +10,6 @@ namespace RentAMovie.Models.RatingModels.Game
     {
         public int GameId { get; set; }
         public string GameTitle { get; set; }
-        public string Type { get; set; }
+        //public string Genre { get; set; }
     }
 }

@@ -47,7 +47,6 @@ namespace RentAMovie.Services
             // Turn the Movies into MovieListItems
             var movieList = entityList.Select(movie => new MovieListItem
             {
-                MovieId = movie.MovieId,
                 MovieTitle = movie.MovieTitle,
                 Genre = movie.Genre,
                 AverageRating = movie.AverageRating,

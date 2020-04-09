@@ -1,5 +1,6 @@
 ﻿using RentAMovie.Data;
 using RentAMovie.Models.CustomerModels;
+using RentAMovie.Models.RentalModels;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -25,8 +26,7 @@ namespace RentAMovie.Services
         {
             Customer entity = new Customer
             {
-                FirstName = model.FirstName,
-                LastName = model.LastName,
+                FullName = model.FullName,
                 Age = model.Age,
                 Phone = model.Phone,
                 Email = model.Email,
@@ -48,8 +48,7 @@ namespace RentAMovie.Services
             var customerList = entityList.Select(customer => new CustomerListItem
             {
                 CustomerId = customer.CustomerId,
-                FirstName = customer.FirstName,
-                LastName = customer.LastName,
+                FullName = customer.FullName,
                 Phone = customer.Phone,
                 Email = customer.Email,
                 RentalCount = customer.Rentals.Count
@@ -72,16 +71,15 @@ namespace RentAMovie.Services
             var model = new CustomerDetail
             {
                 CustomerId = entity.CustomerId,
-                FirstName = entity.FirstName,
-                LastName = entity.LastName,
+                FullName = entity.FullName,
                 Age = entity.Age,
                 Phone = entity.Phone,
                 Email = entity.Email,
-                /*Rentals = entity.Rentals.Select(rental => new RentalListItem
+                Rentals = entity.Rentals.Select(rental => new RentalListItem
                 {
                     RentalId = rental.RentalId,
                     //DayOfReturn = rental.DayOfReturn,
-                }).ToList()*/
+                }).ToList()
 
                 //Year = entity.Year,
                 //Ratings = entity.Ratings,
@@ -117,8 +115,7 @@ namespace RentAMovie.Services
                         .Customers
                         .Single(e => e.CustomerId == model.CustomerId);
 
-                entity.FirstName = model.FirstName;
-                entity.LastName = model.LastName;
+                entity.FullName = model.FullName;
                 entity.Age = model.Age;
                 entity.Phone = model.Phone;
                 entity.Email = model.Email;

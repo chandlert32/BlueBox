@@ -3,7 +3,7 @@ namespace RentAMovie.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class migraiton : DbMigration
+    public partial class migration : DbMigration
     {
         public override void Up()
         {
@@ -12,8 +12,7 @@ namespace RentAMovie.Data.Migrations
                 c => new
                     {
                         CustomerId = c.Int(nullable: false, identity: true),
-                        FirstName = c.String(nullable: false),
-                        LastName = c.String(nullable: false),
+                        FullName = c.String(nullable: false),
                         Age = c.Int(nullable: false),
                         Phone = c.Int(nullable: false),
                         Email = c.String(nullable: false),
@@ -26,10 +25,12 @@ namespace RentAMovie.Data.Migrations
                 c => new
                     {
                         RentalId = c.Int(nullable: false, identity: true),
-                        DayOfReturn = c.DateTime(nullable: false),
                         CustomerId = c.Int(nullable: false),
                         MovieId = c.Int(nullable: false),
                         GameId = c.Int(nullable: false),
+                        FirstName = c.String(),
+                        GameTitle = c.String(),
+                        MovieTitle = c.String(),
                     })
                 .PrimaryKey(t => t.RentalId)
                 .ForeignKey("dbo.Customer", t => t.CustomerId, cascadeDelete: true)

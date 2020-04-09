@@ -72,12 +72,19 @@
     <Compile Include="RatingModels\Movie\MovieRatingListItem.cs" />
     <Compile Include="RatingModels\Movie\MovieRatingCreate.cs" />
     <Compile Include="RatingModels\RatingListItem.cs" />
+    <Compile Include="RentalModels\RentalCreate.cs" />
+    <Compile Include="RentalModels\RentalDetail.cs" />
     <Compile Include="RentalModels\RentalListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\RentAMovie.Data\RentAMovie.Data.csproj">
+      <Project>{6A963770-2020-4836-86D3-F89F44B515EC}</Project>
+      <Name>RentAMovie.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

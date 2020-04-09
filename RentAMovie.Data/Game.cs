@@ -42,7 +42,6 @@ namespace RentAMovie.Data
                 return 0;
             }
         }
-
         public virtual ICollection<GameRating> Ratings { get; set; } = new List<GameRating>();
         public virtual ICollection<Rental> Rentals { get; set; } = new List<Rental>();
 

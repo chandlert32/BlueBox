@@ -61,8 +61,7 @@ namespace RentAMovie.WebMVC.Controllers
                 new CustomerEdit
                 {
                     CustomerId = detail.CustomerId,
-                    FirstName = detail.FirstName,
-                    LastName = detail.LastName,
+                    FullName = detail.FullName,
                     Age = detail.Age,
                     Phone = detail.Phone,
                     Email = detail.Email,

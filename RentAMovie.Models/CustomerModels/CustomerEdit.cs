@@ -12,12 +12,8 @@ namespace RentAMovie.Models.CustomerModels
         public int CustomerId { get; set; }
 
         [Required]
-        [Display(Name = "First Name")]
-        public string FirstName { get; set; }
-
-        [Required]
-        [Display(Name = "Last Name")]
-        public string LastName { get; set; }
+        [Display(Name = "Full Name")]
+        public string FullName { get; set; }
         public int Age { get; set; }
         public int Phone { get; set; }
         public string Email { get; set; }

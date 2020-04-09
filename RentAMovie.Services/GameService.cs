@@ -50,7 +50,6 @@ namespace RentAMovie.Services
             // Turn the Games into GameListItems
             var gameList = entityList.Select(game => new GameListItem
             {
-                GameId = game.GameId,
                 GameTitle = game.GameTitle,
                 Console = game.Console,
                 Genre = game.Genre,
@@ -103,7 +102,7 @@ namespace RentAMovie.Services
                     GameId = entity.GameId,
                     GameTitle = entity.GameTitle,
                     Description = rating.Description,
-                    IsUserOwned = rating.UserId == _userID,
+                    //IsUserOwned = rating.UserId == _userID,
                     Score = rating.Score,
                 });
             }

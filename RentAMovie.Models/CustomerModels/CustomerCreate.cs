@@ -10,12 +10,8 @@ namespace RentAMovie.Models.CustomerModels
     public class CustomerCreate
     {
         [Required]
-        [Display(Name = "First Name")]
-        public string FirstName { get; set; }
-
-        [Required]
-        [Display(Name = "Last Name")]
-        public string LastName { get; set; }
+        [Display(Name = "Full Name")]
+        public string FullName { get; set; }
 
         [Required]
         public int Age { get; set; }

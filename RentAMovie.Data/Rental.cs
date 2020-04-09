@@ -10,11 +10,7 @@ namespace RentAMovie.Data
 {
     public class Rental
     {
-        [Key]
         public int RentalId { get; set; }
-
-        [Required]
-        public DateTime DayOfReturn { get; set; }
 
         [ForeignKey(nameof(Customer))]
         public int CustomerId { get; set; }
@@ -27,5 +23,17 @@ namespace RentAMovie.Data
         [ForeignKey(nameof(Game))]
         public int GameId { get; set; }
         public virtual Game Game { get; set; }
+
+        public string FirstName { get; set; }
+        public string GameTitle { get; set; }
+        public string MovieTitle { get; set; }
+
+        /*public virtual ICollection<Customer> Customers { get; set; }
+        public virtual ICollection<Game> Games { get; set; }
+        public virtual ICollection<Movie> Movies { get; set; }*/
+
+        //public DateTime DayOfReturn { get; set; }
+
+
     }
 }
