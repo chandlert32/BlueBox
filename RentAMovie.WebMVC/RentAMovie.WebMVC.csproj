@@ -173,6 +173,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MovieController.cs" />
+    <Compile Include="Controllers\RatingController.cs" />
     <Compile Include="Controllers\RentalController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -248,7 +249,6 @@
     <Content Include="Views\Rental\Create.cshtml" />
     <Content Include="Views\Rental\Details.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
-    <Content Include="Views\Customer\Details.cshtml" />
     <Content Include="Views\Customer\Edit.cshtml" />
     <Content Include="Views\Game\Index.cshtml" />
     <Content Include="Views\Movie\Index.cshtml" />
@@ -256,13 +256,16 @@
     <Content Include="Views\Game\Create.cshtml" />
     <Content Include="Views\Game\Edit.cshtml" />
     <Content Include="Views\Game\Details.cshtml" />
-    <Content Include="Views\Movie\Create.cshtml" />
     <Content Include="Views\Movie\Edit.cshtml" />
     <Content Include="Views\Customer\Create.cshtml" />
+    <Content Include="Views\Movie\Create.cshtml" />
+    <Content Include="Views\Rating\MovieRatingIndex.cshtml" />
+    <Content Include="Views\Rating\GameRatingIndex.cshtml" />
+    <Content Include="Views\Rating\ViewPage1.cshtml" />
+    <Content Include="Views\Customer\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Rating\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

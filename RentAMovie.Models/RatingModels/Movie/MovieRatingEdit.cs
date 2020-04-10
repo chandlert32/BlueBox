@@ -1,16 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RentAMovie.Models.RatingModels
+namespace RentAMovie.Models.RatingModels.Movie
 {
-    public class RatingListItem
+    public class MovieRatingEdit
     {
         public int RatingId { get; set; }
+        public int MovieId { get; set; }
+
+        [Required]
+        [Range(1, 10)]
         public int Score { get; set; }
         public string Description { get; set; }
-        //public bool IsUserOwned { get; set; }
     }
 }

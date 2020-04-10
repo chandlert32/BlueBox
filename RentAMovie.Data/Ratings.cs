@@ -25,6 +25,7 @@ namespace RentAMovie.Data
         public virtual Customer Customer { get; set; }*/
 
 
+
     }
 
     public class MovieRating : Rating

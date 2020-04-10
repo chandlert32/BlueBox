@@ -68,7 +68,11 @@
     <Compile Include="MovieModels\MovieListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RatingModels\Game\GameRatingCreate.cs" />
+    <Compile Include="RatingModels\Game\GameRatingDetail.cs" />
+    <Compile Include="RatingModels\Game\GameRatingEdit.cs" />
     <Compile Include="RatingModels\Game\GameRatingListItem.cs" />
+    <Compile Include="RatingModels\Movie\MovieRatingDetail.cs" />
+    <Compile Include="RatingModels\Movie\MovieRatingEdit.cs" />
     <Compile Include="RatingModels\Movie\MovieRatingListItem.cs" />
     <Compile Include="RatingModels\Movie\MovieRatingCreate.cs" />
     <Compile Include="RatingModels\RatingListItem.cs" />

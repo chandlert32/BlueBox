@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RentAMovie.Models.RatingModels
+namespace RentAMovie.Models.RatingModels.Movie
 {
-    public class RatingListItem
+    public class MovieRatingDetail
     {
         public int RatingId { get; set; }
+        public int MovieId { get; set; }
+        public string MovieTitle { get; set; }
+        public string Genre { get; set; }
         public int Score { get; set; }
         public string Description { get; set; }
-        //public bool IsUserOwned { get; set; }
     }
 }

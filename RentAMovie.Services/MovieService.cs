@@ -93,7 +93,7 @@ namespace RentAMovie.Services
                     MovieId = entity.MovieId,
                     MovieTitle = entity.MovieTitle,
                     Description = rating.Description,
-                    IsUserOwned = rating.UserId == _userID,
+                    //IsUserOwned = rating.UserId == _userID,
                     Score = rating.Score,
                 });
             }

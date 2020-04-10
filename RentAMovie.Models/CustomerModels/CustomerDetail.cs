@@ -19,10 +19,10 @@ namespace RentAMovie.Models.CustomerModels
         public string Email { get; set; }
         public List<RentalListItem> Rentals { get; set; }
 
-        [Display(Name = "Created")]
+        /*[Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
 
         [Display(Name = "Modified")]
-        public DateTimeOffset? ModifiedUtc { get; set; }
+        public DateTimeOffset? ModifiedUtc { get; set; }*/
     }
 }

@@ -50,25 +50,9 @@
             @Html.DisplayFor(model => model.Email)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CreatedUtc)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CreatedUtc)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ModifiedUtc)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ModifiedUtc)
-        </dd>
-
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.CustomerId }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
