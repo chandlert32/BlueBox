@@ -53,7 +53,7 @@ namespace RentAMovie.WebMVC.Controllers
         {
             if (!ModelState.IsValid) return View(model);
 
-            if (model.GameId != id)
+            if (model.RatingId != id)
             {
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);
@@ -64,7 +64,7 @@ namespace RentAMovie.WebMVC.Controllers
             if (service.UpdateGameRating(model))
             {
                 TempData["SaveResult"] = "Your note was updated.";
-                return RedirectToAction("Index");
+                return RedirectToAction("GameRatingIndex");
             }
 
             ModelState.AddModelError("", "Your note could not be updated.");
@@ -125,7 +125,7 @@ namespace RentAMovie.WebMVC.Controllers
         {
             if (!ModelState.IsValid) return View(model);
 
-            if (model.MovieId != id)
+            if (model.RatingId != id)
             {
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);
@@ -136,7 +136,7 @@ namespace RentAMovie.WebMVC.Controllers
             if (service.UpdateMovieRating(model))
             {
                 TempData["SaveResult"] = "Your note was updated.";
-                return RedirectToAction("Index");
+                return RedirectToAction("MovieRatingIndex");
             }
 
             ModelState.AddModelError("", "Your note could not be updated.");

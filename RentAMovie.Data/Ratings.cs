@@ -20,12 +20,6 @@ namespace RentAMovie.Data
         public string UserId { get; set; }
         public virtual ApplicationUser User { get; set; }
 
-        /*[ForeignKey(nameof(Customer))]
-        public int CustomerId { get; set; }
-        public virtual Customer Customer { get; set; }*/
-
-
-
     }
 
     public class MovieRating : Rating
