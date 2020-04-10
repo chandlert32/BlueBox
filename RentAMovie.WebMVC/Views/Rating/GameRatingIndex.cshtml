@@ -41,8 +41,8 @@
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.RatingId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.RatingId }) |
+            @Html.ActionLink("Edit", "GameRatingEdit", new { id=item.RatingId }) |
+            @Html.ActionLink("Details", "GameRatingDetails", new { id=item.RatingId }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.RatingId })
         </td>
     </tr>

@@ -10,7 +10,7 @@ namespace RentAMovie.Models.RatingModels.Game
     public class GameRatingEdit
     {
         public int RatingId { get; set; }
-        public int MovieId { get; set; }
+        public int GameId { get; set; }
 
         [Required]
         [Range(1, 10)]

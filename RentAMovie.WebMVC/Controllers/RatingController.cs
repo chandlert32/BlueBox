@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
+using RentAMovie.Models.RatingModels.Game;
+using RentAMovie.Models.RatingModels.Movie;
 using RentAMovie.Services;
 using System;
 using System.Collections.Generic;
@@ -19,6 +21,63 @@ namespace RentAMovie.WebMVC.Controllers
             return View(await service.GetAllGameRatingsAsync());
         }
 
+        // GET: GameRating/detail/id
+        public async Task<ActionResult> GameRatingDetails(int id)
+        {
+            var svc = GetRatingsService();
+            var model = await svc.GetGameRatingByIdAsync(id);
+
+            return View(model);
+        }
+
+        // GET: GameRating/edit
+        public async Task<ActionResult> GameRatingEdit(int id)
+        {
+            var service = GetRatingsService();
+            var detail = await service.GetGameRatingByIdAsync(id);
+            var model =
+                new GameRatingEdit
+                {
+                    RatingId = detail.RatingId,
+                    GameId = detail.GameId,
+                    Score = detail.Score,
+                    Description = detail.Description
+                };
+            return View(model);
+        }
+
+        // POST: GameRating/edit
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult GameRatingEdit(int id, GameRatingEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.GameId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = GetRatingsService();
+
+            if (service.UpdateGameRating(model))
+            {
+                TempData["SaveResult"] = "Your note was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your note could not be updated.");
+            return View(model);
+        }
+
+
+
+
+
+
+
+
         // GET: MovieRating
         [ActionName("MovieRatingIndex")]
         public async Task<ActionResult> MovieRatingIndex()
@@ -32,6 +91,56 @@ namespace RentAMovie.WebMVC.Controllers
             var userId = User.Identity.GetUserId();
             var service = new RatingService(userId);
             return service;
+        }
+
+        // GET: MovieRating/detail/id
+        public async Task<ActionResult> MovieRatingDetails(int id)
+        {
+            var svc = GetRatingsService();
+            var model = await svc.GetMovieRatingByIdAsync(id);
+
+            return View(model);
+        }
+
+        // GET: MovieRating/edit
+        public async Task<ActionResult> MovieRatingEdit(int id)
+        {
+            var service = GetRatingsService();
+            var detail = await service.GetMovieRatingByIdAsync(id);
+            var model =
+                new MovieRatingEdit
+                {
+                    RatingId = detail.RatingId,
+                    MovieId = detail.MovieId,
+                    Score = detail.Score,
+                    Description = detail.Description
+                };
+            return View(model);
+        }
+
+        // POST: MovieRating/edit
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult MovieRatingEdit(int id, MovieRatingEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.MovieId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = GetRatingsService();
+
+            if (service.UpdateMovieRating(model))
+            {
+                TempData["SaveResult"] = "Your note was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your note could not be updated.");
+            return View(model);
         }
     }
 }

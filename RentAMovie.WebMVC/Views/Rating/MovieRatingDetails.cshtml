@@ -1,0 +1,50 @@
+﻿@model RentAMovie.Models.RatingModels.Movie.MovieRatingDetail
+
+@{
+    ViewBag.Title = "MovieRatingDetails";
+}
+
+<h2>MovieRatingDetails</h2>
+
+<div>
+    <h4>MovieRatingDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MovieTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MovieTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Genre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Score)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Score)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "MovieRatingEdit", new { id = Model.RatingId }) |
+    @Html.ActionLink("Back to List", "MovieRatingIndex")
+</p>

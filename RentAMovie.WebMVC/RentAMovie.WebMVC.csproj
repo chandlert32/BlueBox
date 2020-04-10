@@ -263,6 +263,10 @@
     <Content Include="Views\Rating\GameRatingIndex.cshtml" />
     <Content Include="Views\Rating\ViewPage1.cshtml" />
     <Content Include="Views\Customer\Details.cshtml" />
+    <Content Include="Views\Rating\MovieRatingEdit.cshtml" />
+    <Content Include="Views\Rating\MovieRatingDetails.cshtml" />
+    <Content Include="Views\Rating\GameRatingDetails.cshtml" />
+    <Content Include="Views\Rating\GameRatingEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

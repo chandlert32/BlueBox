@@ -56,6 +56,47 @@ namespace RentAMovie.Services
             return gameratingList;
         }
 
+        // GET BY ID
+        public async Task<GameRatingDetail> GetGameRatingByIdAsync(int gameratingId)
+        {
+            // Search Database by ID for GameRating
+            var entity = await _context.GameRatings.FindAsync(gameratingId);
+            if (entity == null)
+                // throw new Exception("No gamerating found.");
+                return null;
+
+            // Turn the entity into the Detail
+            var model = new GameRatingDetail
+            {
+                RatingId = entity.RatingId,
+                GameId = entity.Game.GameId,
+                GameTitle = entity.Game.GameTitle,
+                Genre = entity.Game.Genre,
+                Score = entity.Score,
+                Description = entity.Description
+                
+
+            };
+
+            return model;
+        }
+
+        // EDIT 
+        public bool UpdateGameRating(GameRatingEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .GameRatings
+                        .Single(e => e.RatingId == model.RatingId);
+
+                entity.Score = model.Score;
+                entity.Description = model.Description;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
 
 
 
@@ -117,6 +158,48 @@ namespace RentAMovie.Services
 
             // return changed list
             return movieratingList;
+        }
+
+        // GET BY ID
+        public async Task<MovieRatingDetail> GetMovieRatingByIdAsync(int movieratingId)
+        {
+            // Search Database by ID for MovieRating
+            var entity = await _context.MovieRatings.FindAsync(movieratingId);
+            if (entity == null)
+                // throw new Exception("No movierating found.");
+                return null;
+
+            // Turn the entity into the Detail
+            var model = new MovieRatingDetail
+            {
+                RatingId = entity.RatingId,
+                MovieId = entity.Movie.MovieId,
+                MovieTitle = entity.Movie.MovieTitle,
+                Genre = entity.Movie.Genre,
+                Score = entity.Score,
+                Description = entity.Description
+
+
+            };
+
+            return model;
+        }
+
+        // EDIT 
+        public bool UpdateMovieRating(MovieRatingEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .MovieRatings
+                        .Single(e => e.RatingId == model.RatingId);
+
+                entity.Score = model.Score;
+                entity.Description = model.Description;
+
+                return ctx.SaveChanges() == 1;
+            }
         }
     }
 }
