@@ -13,6 +13,11 @@ namespace RentAMovie.WebMVC.Controllers
 {
     public class RatingController : Controller
     {
+        public ActionResult Index()
+        {
+            return View();
+        }
+
         // GET: GameRating
         [ActionName("GameRatingIndex")]
         public async Task<ActionResult> GameRatingIndex()
