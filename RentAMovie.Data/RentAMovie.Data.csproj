@@ -57,9 +57,9 @@
     <Compile Include="Customer.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202004101839107_migration.cs" />
-    <Compile Include="Migrations\202004101839107_migration.Designer.cs">
-      <DependentUpon>202004101839107_migration.cs</DependentUpon>
+    <Compile Include="Migrations\202004121851091_migration.cs" />
+    <Compile Include="Migrations\202004121851091_migration.Designer.cs">
+      <DependentUpon>202004121851091_migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Movie.cs" />
@@ -72,8 +72,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202004101839107_migration.resx">
-      <DependentUpon>202004101839107_migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004121851091_migration.resx">
+      <DependentUpon>202004121851091_migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

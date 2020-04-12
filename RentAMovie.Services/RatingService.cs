@@ -21,6 +21,13 @@ namespace RentAMovie.Services
             _userID = userID;
         }
 
+        public IEnumerable<Game> displayData { get; set; }
+
+        public async Task OnGet()
+        {
+            displayData = await _context.Games.ToListAsync();
+        }
+
         // Rate a Game
         public async Task<bool> CreateGameRatingAsync(GameRatingCreate model)
         {

@@ -20,9 +20,15 @@ namespace RentAMovie.Services
             _userID = userID;
         }
 
+        public DateTime Checkedout = DateTime.Now;
+
+        public IEnumerable<Movie> movieList { get; set; }
+
         // CREATE
         public async Task<bool> CreateRentalAsync (RentalCreate model)
         {
+            movieList = await _context.Movies.ToListAsync();
+
             Rental entity = new Rental
             {
                 CustomerId = model.CustomerId,
@@ -72,8 +78,6 @@ namespace RentAMovie.Services
                 GameTitle = entity.Game.GameTitle,
                 MovieTitle = entity.Movie.MovieTitle,
                 Phone = entity.Customer.Phone,
-                //DayRented = entity.DayRented,
-                //ReturnDate = entity.ReturnDate
 
 
             };

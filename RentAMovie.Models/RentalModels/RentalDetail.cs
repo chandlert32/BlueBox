@@ -24,9 +24,5 @@ namespace RentAMovie.Models.RentalModels
         [Display(Name = "Customer Phone:")]
         public int Phone { get; set; }
 
-
-        //public DateTime DayRented { get; set; }
-        //public DateTime ReturnDate { get; set; }
-
     }
 }

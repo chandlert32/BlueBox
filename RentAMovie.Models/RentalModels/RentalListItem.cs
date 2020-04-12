@@ -21,9 +21,6 @@ namespace RentAMovie.Models.RentalModels
         public string MovieTitle { get; set; }
 
 
-        //public DateTime DayRented { get; set; }
-        //public DateTime ReturnDate { get; set; }
-
 
     }
 }

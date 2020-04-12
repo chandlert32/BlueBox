@@ -28,12 +28,6 @@ namespace RentAMovie.Data
         public string GameTitle { get; set; }
         public string MovieTitle { get; set; }
 
-        /*public virtual ICollection<Customer> Customers { get; set; }
-        public virtual ICollection<Game> Games { get; set; }
-        public virtual ICollection<Movie> Movies { get; set; }*/
-
-        //public DateTime DayOfReturn { get; set; }
-
 
     }
 }
