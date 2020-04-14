@@ -4,13 +4,37 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Rentals</h2>
+<br />
+
+<style type="text/css">
+    h2 {
+        color: #fff;
+    }
+
+    body {
+        background-image: url('../../Content/Assets/blueback.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+
+    table {
+        text-decoration: none;
+    }
+</style>
+
+<h2>Rental List</h2>
 
 <p class="btn btn-default">
-        @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table table-striped table-bordered">
-    <tr>
+
+<br />
+<br />
+<br />
+
+<table class="table table-hover table-bordered" style="background-color:#fff">
+    <tr style="background-color: lightgrey">
         <th>
             @Html.DisplayNameFor(model => model.RentalId)
         </th>

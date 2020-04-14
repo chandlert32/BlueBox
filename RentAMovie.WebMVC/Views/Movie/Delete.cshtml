@@ -4,11 +4,36 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<style type="text/css">
+    h2 {
+        color: #fff;
+    }
 
-<h3>Are you sure you want to delete this?</h3>
+    body {
+        background-image: url('../../Content/Assets/blueback.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        color: #fff;
+    }
+
+    table {
+        text-decoration: none;
+    }
+</style>
+
+
+<h2>Deleting a Movie</h2>
+
+
 <div>
-    <h4>MovieDetail</h4>
+    <p class="btn btn-default">
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
+    <br />
+    <br />
+
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -53,12 +78,15 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    <br />
+
+    <h3>Are you sure you want to delete this movie?</h3>
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Delete" class="btn btn-default" />
         </div>
     }
 </div>

@@ -4,6 +4,24 @@
     ViewBag.Title = "Details";
 }
 
+<style type="text/css">
+    h2 {
+        color: #fff;
+    }
+
+    body {
+        background-image: url('../../Content/Assets/blueback.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        color: #fff;
+    }
+
+    table {
+        text-decoration: none;
+    }
+</style>
+
 <h2>Details</h2>
 
 <div>
@@ -52,7 +70,10 @@
 
     </dl>
 </div>
-<p>
+
+<br />
+
+<p class="btn btn-default">
     @Html.ActionLink("Edit", "Edit", new { id = Model.MovieId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

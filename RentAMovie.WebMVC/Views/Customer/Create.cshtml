@@ -4,15 +4,33 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<style type="text/css">
+    h2 {
+        color: #fff;
+    }
+
+    body {
+        background-image: url('../../Content/Assets/blueback.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        color: #fff;
+    }
+
+    table {
+        text-decoration: none;
+    }
+</style>
+
+<h1>Create</h1>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>CustomerCreate</h4>
+        <h5>Add a new customer to the list</h5>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -55,7 +73,9 @@
     </div>
 }
 
-<div>
+<br />
+<br />
+<div class="btn btn-default">
     @Html.ActionLink("Back to List", "Index")
 </div>
 

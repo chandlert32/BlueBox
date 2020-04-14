@@ -4,15 +4,33 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<style type="text/css">
+    h2 {
+        color: #fff;
+    }
+
+    body {
+        background-image: url('../../Content/Assets/blueback.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        color: #fff;
+    }
+
+    table {
+        text-decoration: none;
+    }
+</style>
+
+<h1>Edit</h1>
 
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>CustomerEdit</h4>
+        <h5>Change the details of the customer</h5>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -63,7 +81,9 @@
     </div>
 }
 
-<div>
+<br />
+<br />
+<div class="btn btn-default">
     @Html.ActionLink("Back to List", "Index")
 </div>
 

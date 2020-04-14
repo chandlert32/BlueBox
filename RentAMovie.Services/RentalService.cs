@@ -74,6 +74,7 @@ namespace RentAMovie.Services
             // Turn the entity into the Detail
             var model = new RentalDetail
             {
+                RentalId = entity.RentalId,
                 FullName = entity.Customer.FullName,
                 GameTitle = entity.Game.GameTitle,
                 MovieTitle = entity.Movie.MovieTitle,

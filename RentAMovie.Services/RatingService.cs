@@ -23,10 +23,6 @@ namespace RentAMovie.Services
 
         public IEnumerable<Game> displayData { get; set; }
 
-        public async Task OnGet()
-        {
-            displayData = await _context.Games.ToListAsync();
-        }
 
         // Rate a Game
         public async Task<bool> CreateGameRatingAsync(GameRatingCreate model)
@@ -204,6 +200,22 @@ namespace RentAMovie.Services
 
                 entity.Score = model.Score;
                 entity.Description = model.Description;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        // DELETE
+        public bool DeleteRating(int ratingId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Ratings
+                        .Single(e => e.RatingId == ratingId);
+
+                ctx.Ratings.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
             }

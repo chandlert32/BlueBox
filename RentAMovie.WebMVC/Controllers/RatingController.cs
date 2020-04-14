@@ -91,12 +91,7 @@ namespace RentAMovie.WebMVC.Controllers
             return View(await service.GetAllMovieRatingsAsync());
         }
 
-        private RatingService GetRatingsService()
-        {
-            var userId = User.Identity.GetUserId();
-            var service = new RatingService(userId);
-            return service;
-        }
+
 
         // GET: MovieRating/detail/id
         public async Task<ActionResult> MovieRatingDetails(int id)
@@ -146,6 +141,38 @@ namespace RentAMovie.WebMVC.Controllers
 
             ModelState.AddModelError("", "Your note could not be updated.");
             return View(model);
+        }
+
+        // GET: Delete
+        [ActionName("Delete")]
+        public async Task<ActionResult> Delete(int id)
+        {
+            var svc = GetRatingsService();
+            var model = await svc.GetMovieRatingByIdAsync(id);
+
+            return View(model);
+        }
+
+        // POST: Delete
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = GetRatingsService();
+
+            service.DeleteRating(id);
+
+            TempData["SaveResult"] = "Your note was deleted";
+
+            return RedirectToAction("Index");
+        }
+
+        private RatingService GetRatingsService()
+        {
+            var userId = User.Identity.GetUserId();
+            var service = new RatingService(userId);
+            return service;
         }
     }
 }

@@ -8,7 +8,7 @@
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-<body>
+<body class="navbar navbar-da">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -27,7 +27,6 @@
                     <li>@Html.ActionLink("Rating", "Index", "Rating")</li>
                     <li>@Html.ActionLink("Customer", "Index", "Customer")</li>
                     <li>@Html.ActionLink("Rental", "Index", "Rental")</li>
-                    
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -36,7 +35,7 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
+        <footer style="color:#fff">
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
