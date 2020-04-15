@@ -13,7 +13,7 @@ namespace RentAMovie.WebMVC.Controllers
     public class CustomerController : Controller
     {
         // GET: Customer
-        [Authorize]
+        [Authorize(Roles ="Admin")]
         [ActionName("Index")]
         public async Task<ActionResult> Index()
         {

@@ -19,7 +19,7 @@ namespace RentAMovie.Services
         public GameService(string userID) /* DEPENDENDCY INJECTION */
         {
             _context = new ApplicationDbContext();
-            _userID = userID;
+            this._userID = userID;
         }
 
         // CREATE

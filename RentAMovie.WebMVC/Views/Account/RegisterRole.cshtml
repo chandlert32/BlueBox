@@ -1,0 +1,70 @@
+﻿@model RentAMovie.WebMVC.Models.RegisterViewModel
+
+@{
+    ViewBag.Title = "RegisterRole";
+}
+
+<style type="text/css">
+    h2 {
+        color: #fff;
+    }
+
+    body {
+        background-image: url('../../Content/Assets/blueback.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        color: #fff
+
+    }
+
+    table {
+        text-decoration: none;
+    }
+</style>
+
+<br/>
+
+<h1>Link an email with a role</h1>
+
+
+
+@using (Html.BeginForm("RegisterRole", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <h5>Register Below</h5>
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.Label("Select Email", new { @class = "col-md-2 control-label" })
+        <div class="col-md-10" style="color:black">
+            @Html.DropDownList("UserName")
+        </div>
+    </div>
+
+    <!---Select the Role Type for the User-->
+    <div class="form-group">
+        @Html.Label("Select Role", new { @class = "col-md-2 control-label" })
+        <div class="col-md-10" style="color:black">
+            @Html.DropDownList("Name")
+        </div>
+    </div>
+
+    <!--Ends Here-->
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Register" />
+        </div>
+    </div>
+}
+
+
+<br/>
+<br/>
+<div class="btn btn-default">
+    @Html.ActionLink("Back to List", "Index", "Role")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -8,22 +8,22 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 
-<body style="font-family:sans-serif">
+<body style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight:bold">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("BlueBox", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+                <div class="navbar-header pull-left">
+                    <a class="navbar-brand" href="@Url.Action("Index", "Home")">
+                        <img src="~/Content/Assets/box.png" alt="Site Logo" style="height:90%; width: 40px" />
+                    </a>
+                </div>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Game", "Index", "Game")</li>
-                    <li>@Html.ActionLink("Movie", "Index", "Movie")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Games", "Index", "Game")</li>
+                    <li>@Html.ActionLink("Movies", "Index", "Movie")</li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ratings<b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -36,6 +36,7 @@
                         <ul class="dropdown-menu">
                             <li>@Html.ActionLink("Customer", "Index", "Customer")</li>
                             <li>@Html.ActionLink("Rental", "Index", "Rental")</li>
+                            <li>@Html.ActionLink("Roles", "Index", "Role")</li>
                         </ul>
                     </li>
                 </ul>
@@ -47,13 +48,10 @@
 
 
 
-
-
-
-    <div class="container body-content">
+    <div class="container body-content" style="width:80%">
         @RenderBody()
         <hr />
-        <footer style="color:#fff">
+        <footer style="color:#fff; width:initial">
             <p>&copy; @DateTime.Now.Year - BlueBox Application</p>
         </footer>
     </div>

@@ -3,13 +3,32 @@
     ViewBag.Title = "Register";
 }
 
-<h2>@ViewBag.Title.</h2>
+<style type="text/css">
+
+    body {
+        background-image: url('../../Content/Assets/blueback.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        color: #fff;
+    }
+
+    table {
+        text-decoration: none;
+    }
+</style>
+
+<h1>@ViewBag.Title.</h1>
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
+    <h5>Already have an account?</h5>
+    <div class="btn btn-default">
+        @Html.ActionLink("Log In", "Login")
+    </div>
     <hr />
+    <br />
     @Html.ValidationSummary("", new { @class = "text-danger" })
     <div class="form-group">
         @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
@@ -34,6 +53,7 @@
             <input type="submit" class="btn btn-default" value="Register" />
         </div>
     </div>
+    <br />
 }
 
 @section Scripts {

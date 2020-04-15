@@ -13,12 +13,12 @@ namespace RentAMovie.Services
     public class CustomerService
     {
         private readonly ApplicationDbContext _context;
-        private readonly string _userID;
+        private readonly string _userId;
 
         public CustomerService(string userID) /* DEPENDENDCY INJECTION */
         {
             _context = new ApplicationDbContext();
-            _userID = userID;
+            this._userId = userID;
         }
 
         // CREATE

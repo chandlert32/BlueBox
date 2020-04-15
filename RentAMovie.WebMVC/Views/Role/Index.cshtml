@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Microsoft.AspNet.Identity.EntityFramework.IdentityRole>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<br />
+
+<style type="text/css">
+    h2 {
+        color: #fff;
+    }
+
+    body {
+        background-image: url('../../Content/Assets/blueback.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+
+    table {
+        text-decoration: none;
+    }
+</style>
+
+<h2>Admin Roles</h2>
+
+<p class="btn btn-default">
+    @Html.ActionLink("Create Role", "Create", "Role") | 
+    @Html.ActionLink("Assign Role", "RegisterRole", "Account")
+</p>
+
+<br />
+<br />
+<br />
+<section class="col-sm-6">
+    <table class="table-bordered">
+        
+    </table>
+</section>
+
+<table class="table table-hover table-bordered" style="background-color: #fff">
+    <tr style="background-color: lightgrey">
+        <th class="c">
+            Role Name
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="c">
+                @item.Name
+            </td>
+        </tr>
+    }
+
+</table>

@@ -36,6 +36,7 @@ namespace RentAMovie.WebMVC.Controllers
         }
 
         // GET: GameRating/edit
+        [Authorize(Roles = "User")]
         public async Task<ActionResult> GameRatingEdit(int id)
         {
             var service = GetRatingsService();
@@ -53,6 +54,7 @@ namespace RentAMovie.WebMVC.Controllers
 
         // POST: GameRating/edit
         [HttpPost]
+        [Authorize(Roles = "User")]
         [ValidateAntiForgeryToken]
         public ActionResult GameRatingEdit(int id, GameRatingEdit model)
         {
@@ -161,7 +163,7 @@ namespace RentAMovie.WebMVC.Controllers
         {
             var service = GetRatingsService();
 
-            service.DeleteRating(id);
+            service.DeleteMovieRating(id);
 
             TempData["SaveResult"] = "Your note was deleted";
 

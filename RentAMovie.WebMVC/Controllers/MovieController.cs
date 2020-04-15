@@ -22,7 +22,7 @@ namespace RentAMovie.WebMVC.Controllers
         }
 
         // GET: Movie/Create
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -30,7 +30,7 @@ namespace RentAMovie.WebMVC.Controllers
 
         // POST: Movie/Create
         [HttpPost]
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(MovieCreate model)
         {
@@ -56,7 +56,7 @@ namespace RentAMovie.WebMVC.Controllers
         }
 
         // GET: Movie/edit
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult> Edit(int id)
         {
             var service = GetMovieService();
@@ -74,7 +74,7 @@ namespace RentAMovie.WebMVC.Controllers
 
         // POST: Movie/edit
         [HttpPost]
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, MovieEdit model)
         {
@@ -101,7 +101,7 @@ namespace RentAMovie.WebMVC.Controllers
 
         // GET: Movie/Rate/id
         [HttpGet]
-        [Authorize]
+        [Authorize(Roles = "User")]
         public async Task<ActionResult> Rate(int id)
         {
             var service = GetMovieService();
@@ -113,7 +113,7 @@ namespace RentAMovie.WebMVC.Controllers
 
         // POST: Game/Rate/id
         [HttpPost]
-        [Authorize]
+        [Authorize(Roles = "User")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Rate(MovieRatingCreate model)
         {
@@ -130,7 +130,7 @@ namespace RentAMovie.WebMVC.Controllers
         }
 
         // GET: Delete
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [ActionName("Delete")]
         public async Task<ActionResult> Delete(int id)
         {
@@ -142,7 +142,7 @@ namespace RentAMovie.WebMVC.Controllers
 
         // POST: Delete
         [HttpPost]
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeletePost(int id)

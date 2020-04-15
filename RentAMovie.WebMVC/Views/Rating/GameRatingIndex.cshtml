@@ -26,8 +26,7 @@
 <h2>List of Game Ratings</h2>
 
 <p class="btn btn-default">
-    @Html.ActionLink("Create New", "Create") |
-    @Html.ActionLink("Back", "Index")
+    @Html.ActionLink("Movies", "MovieRatingIndex")
 </p>
 
 <br />
@@ -68,8 +67,8 @@
             </td>
             <td>
                 @Html.ActionLink("Edit", "GameRatingEdit", new { id = item.RatingId }) |
-                @Html.ActionLink("Details", "GameRatingDetails", new { id = item.RatingId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.RatingId })
+                @Html.ActionLink("Details", "GameRatingDetails", new { id = item.RatingId })
+                @*@Html.ActionLink("Delete", "Delete", new { id = item.RatingId })*@
             </td>
         </tr>
     }

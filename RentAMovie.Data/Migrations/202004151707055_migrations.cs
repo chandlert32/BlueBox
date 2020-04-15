@@ -3,7 +3,7 @@ namespace RentAMovie.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class migration : DbMigration
+    public partial class migrations : DbMigration
     {
         public override void Up()
         {

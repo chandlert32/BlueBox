@@ -12,9 +12,9 @@ namespace RentAMovie.WebMVC.Controllers
 {
     public class RentalController : Controller
     {
-        
+
         // GET: Rental
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [ActionName("Index")]
         public async Task<ActionResult> Index()
         {
@@ -24,7 +24,7 @@ namespace RentAMovie.WebMVC.Controllers
 
 
         // GET: Rental/Create
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -32,7 +32,7 @@ namespace RentAMovie.WebMVC.Controllers
 
         // POST: Rental/Create
         [HttpPost]
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(RentalCreate model)
         {
@@ -47,9 +47,9 @@ namespace RentAMovie.WebMVC.Controllers
 
             return View(model);
         }
-        
+
         // GET: Rental/detail/id
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult> Details(int id)
         {
             var svc = GetRentalService();
@@ -59,7 +59,7 @@ namespace RentAMovie.WebMVC.Controllers
         }
 
         // GET: Delete
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [ActionName("Delete")]
         public async Task<ActionResult> Delete(int id)
         {
@@ -71,7 +71,7 @@ namespace RentAMovie.WebMVC.Controllers
 
         // POST: Delete
         [HttpPost]
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeletePost(int id)

@@ -35,7 +35,7 @@ namespace RentAMovie.Services
                 UserId = _userID,
             };
 
-            _context.Ratings.Add(entity);
+            _context.GameRatings.Add(entity);
             var changeCount = await _context.SaveChangesAsync();
             return changeCount == 1;
         }
@@ -101,6 +101,22 @@ namespace RentAMovie.Services
             }
         }
 
+        // DELETE
+        public bool DeleteGameRating(int ratingId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .GameRatings
+                        .Single(e => e.RatingId == ratingId);
+
+                ctx.GameRatings.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
 
 
 
@@ -139,7 +155,7 @@ namespace RentAMovie.Services
                 UserId = _userID,
             };
 
-            _context.Ratings.Add(entity);
+            _context.MovieRatings.Add(entity);
             var changeCount = await _context.SaveChangesAsync();
             return changeCount == 1;
         }
@@ -147,10 +163,10 @@ namespace RentAMovie.Services
         // GET ALL RATED Movies
         public async Task<List<MovieRatingListItem>> GetAllMovieRatingsAsync()
         {
-            // Get all games from db (Game)
+            // Get all movies from db (Movie)
             var entityList = await _context.MovieRatings.ToListAsync();
-
-            // Turn the GameRating into GameRatingListItems
+            
+            // Turn the MovieRating into MovieRatingListItems
             var movieratingList = entityList.Select(movierating => new MovieRatingListItem
             {
                 RatingId = movierating.RatingId,
@@ -206,16 +222,16 @@ namespace RentAMovie.Services
         }
 
         // DELETE
-        public bool DeleteRating(int ratingId)
+        public bool DeleteMovieRating(int ratingId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                        .Ratings
+                        .MovieRatings
                         .Single(e => e.RatingId == ratingId);
 
-                ctx.Ratings.Remove(entity);
+                ctx.MovieRatings.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
             }
