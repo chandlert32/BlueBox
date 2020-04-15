@@ -30,7 +30,7 @@ namespace RentAMovie.Services
                 MovieTitle = model.MovieTitle,
                 Genre = model.Genre,
                 MovieDescription = model.MovieDescription,
-                CreatedUtc = DateTimeOffset.Now
+                Year = model.Year
             };
 
             _context.Movies.Add(entity);
@@ -49,6 +49,7 @@ namespace RentAMovie.Services
             {
                 MovieId = movie.MovieId,
                 MovieTitle = movie.MovieTitle,
+                Year = movie.Year,
                 Genre = movie.Genre,
                 AverageRating = movie.AverageRating,
                 RentalCount = movie.Rentals.Count
@@ -72,16 +73,13 @@ namespace RentAMovie.Services
             {
                 MovieId = entity.MovieId,
                 MovieTitle = entity.MovieTitle,
+                Year = entity.Year,
                 Genre = entity.Genre,
                 MovieDescription = entity.MovieDescription,
                 Rentals = entity.Rentals.Select(rental => new RentalListItem
                 {
                     RentalId = rental.RentalId,
-                    //DayOfReturn = rental.DayOfReturn,
                 }).ToList()
-                //Year = entity.Year,
-                //Ratings = entity.Ratings,
-                //Rentals = entity.Rentals,
 
             };
 
@@ -93,7 +91,6 @@ namespace RentAMovie.Services
                     MovieId = entity.MovieId,
                     MovieTitle = entity.MovieTitle,
                     Description = rating.Description,
-                    //IsUserOwned = rating.UserId == _userID,
                     Score = rating.Score,
                 });
             }
@@ -113,6 +110,7 @@ namespace RentAMovie.Services
                         .Single(e => e.MovieId == model.MovieId);
 
                 entity.MovieTitle = model.MovieTitle;
+                entity.Year = model.Year;
                 entity.Genre = model.Genre;
                 entity.MovieDescription = model.MovieDescription;
 

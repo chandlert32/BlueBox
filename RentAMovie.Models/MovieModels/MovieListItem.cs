@@ -21,5 +21,7 @@ namespace RentAMovie.Models.MovieModels
         [Display(Name = "Rental Count")]
         public int RentalCount { get; set; }
 
+        [Display(Name = "Release Year")]
+        public int Year { get; set; }
     }
 }

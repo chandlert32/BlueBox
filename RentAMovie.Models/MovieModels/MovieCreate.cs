@@ -22,6 +22,9 @@ namespace RentAMovie.Models.MovieModels
         [Display(Name = "Description")]
         public string MovieDescription { get; set; }
 
-        //public DateTime Year { get; set; }
+        [Required]
+        [Range(1900, 2050)]
+        [Display(Name ="Release Year")]
+        public int Year { get; set; }
     }
 }

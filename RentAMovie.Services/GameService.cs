@@ -33,7 +33,7 @@ namespace RentAMovie.Services
                 Player = model.Player,
                 Online = model.Online,
                 GameDescription = model.GameDescription,
-                //Year = model.Year,
+                Year = model.Year,
             };
 
             _context.Games.Add(entity);
@@ -52,6 +52,7 @@ namespace RentAMovie.Services
             {
                 GameId = game.GameId,
                 GameTitle = game.GameTitle,
+                Year = game.Year,
                 Console = game.Console,
                 Genre = game.Genre,
                 AverageRating = game.AverageRating,
@@ -81,17 +82,11 @@ namespace RentAMovie.Services
                 Player = entity.Player,
                 Online = entity.Online,
                 GameDescription = entity.GameDescription,
+                Year = entity.Year,
                 Rentals = entity.Rentals.Select(rental => new RentalListItem
                 {
                     RentalId = rental.RentalId,
-                    //DayOfReturn = rental.DayOfReturn,
                 }).ToList(),
-                CreatedUtc = entity.CreatedUtc,
-                Modified = entity.Modified
-                
-                //Year = entity.Year,
-                //Ratings = entity.Ratings,
-                //Rentals = entity.Rentals,
 
             };
 
@@ -103,7 +98,6 @@ namespace RentAMovie.Services
                     GameId = entity.GameId,
                     GameTitle = entity.GameTitle,
                     Description = rating.Description,
-                    //IsUserOwned = rating.UserId == _userID,
                     Score = rating.Score,
                 });
             }
@@ -128,6 +122,7 @@ namespace RentAMovie.Services
                 entity.Player = model.Player;
                 entity.Online = model.Online;
                 entity.GameDescription = model.GameDescription;
+                entity.Year = model.Year;
 
                 return ctx.SaveChanges() == 1;
             }

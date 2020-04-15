@@ -3,12 +3,12 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - BlueBox</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
 </head>
-<body class="navbar navbar-da">
+
+<body style="font-family:sans-serif">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -24,19 +24,37 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Game", "Index", "Game")</li>
                     <li>@Html.ActionLink("Movie", "Index", "Movie")</li>
-                    <li>@Html.ActionLink("Rating", "Index", "Rating")</li>
-                    <li>@Html.ActionLink("Customer", "Index", "Customer")</li>
-                    <li>@Html.ActionLink("Rental", "Index", "Rental")</li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ratings<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Games", "GameRatingIndex", "Rating")</li>
+                            <li>@Html.ActionLink("Movies", "MovieRatingIndex", "Rating")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Customer", "Index", "Customer")</li>
+                            <li>@Html.ActionLink("Rental", "Index", "Rental")</li>
+                        </ul>
+                    </li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer style="color:#fff">
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - BlueBox Application</p>
         </footer>
     </div>
 

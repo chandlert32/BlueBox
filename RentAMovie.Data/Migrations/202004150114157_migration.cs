@@ -16,7 +16,6 @@ namespace RentAMovie.Data.Migrations
                         Age = c.Int(nullable: false),
                         Phone = c.Int(nullable: false),
                         Email = c.String(nullable: false),
-                        CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
                     })
                 .PrimaryKey(t => t.CustomerId);
             
@@ -51,8 +50,7 @@ namespace RentAMovie.Data.Migrations
                         Player = c.Int(nullable: false),
                         Online = c.Boolean(nullable: false),
                         GameDescription = c.String(nullable: false),
-                        CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
-                        Modified = c.DateTimeOffset(precision: 7),
+                        Year = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.GameId);
             
@@ -145,8 +143,7 @@ namespace RentAMovie.Data.Migrations
                         MovieTitle = c.String(nullable: false),
                         Genre = c.String(nullable: false),
                         MovieDescription = c.String(nullable: false),
-                        CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
-                        Modified = c.DateTimeOffset(precision: 7),
+                        Year = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.MovieId);
             

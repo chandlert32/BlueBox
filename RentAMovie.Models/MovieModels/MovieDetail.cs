@@ -19,14 +19,10 @@ namespace RentAMovie.Models.MovieModels
 
         [Display(Name = "Description")]
         public string MovieDescription { get; set; }
-        public DateTime Year { get; set; }
+
+        [Display(Name = "Release Year")]
+        public int Year { get; set; }
         public List<MovieRatingListItem> Ratings { get; set; } = new List<MovieRatingListItem>();
         public List<RentalListItem> Rentals { get; set; } = new List<RentalListItem>();
-
-        [Display(Name = "Created")]
-        public DateTimeOffset CreatedUtc { get; set; }
-
-        [Display(Name = "Modified")]
-        public DateTimeOffset? ModifiedUtc { get; set; }
     }
 }

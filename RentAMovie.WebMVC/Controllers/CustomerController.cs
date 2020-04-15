@@ -13,6 +13,7 @@ namespace RentAMovie.WebMVC.Controllers
     public class CustomerController : Controller
     {
         // GET: Customer
+        [Authorize]
         [ActionName("Index")]
         public async Task<ActionResult> Index()
         {
@@ -21,6 +22,7 @@ namespace RentAMovie.WebMVC.Controllers
         }
 
         // GET: Customer/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -28,6 +30,7 @@ namespace RentAMovie.WebMVC.Controllers
 
         // POST: Customer/Create
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(CustomerCreate model)
         {
@@ -44,6 +47,7 @@ namespace RentAMovie.WebMVC.Controllers
         }
 
         // GET: Customer/detail/id
+        [Authorize]
         public async Task<ActionResult> Details(int id)
         {
             var svc = GetCustomerService();
@@ -53,6 +57,7 @@ namespace RentAMovie.WebMVC.Controllers
         }
 
         // GET: Customer/edit
+        [Authorize]
         public async Task<ActionResult> Edit(int id)
         {
             var service = GetCustomerService();
@@ -72,6 +77,7 @@ namespace RentAMovie.WebMVC.Controllers
 
         // POST: Customer/edit
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, CustomerEdit model)
         {
@@ -96,6 +102,7 @@ namespace RentAMovie.WebMVC.Controllers
         }
 
         // GET: Delete
+        [Authorize]
         [ActionName("Delete")]
         public async Task<ActionResult> Delete(int id)
         {
@@ -107,6 +114,7 @@ namespace RentAMovie.WebMVC.Controllers
 
         // POST: Delete
         [HttpPost]
+        [Authorize]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeletePost(int id)

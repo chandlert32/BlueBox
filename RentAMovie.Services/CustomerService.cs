@@ -30,7 +30,6 @@ namespace RentAMovie.Services
                 Age = model.Age,
                 Phone = model.Phone,
                 Email = model.Email,
-                CreatedUtc = DateTimeOffset.Now
             };
 
             _context.Customers.Add(entity);

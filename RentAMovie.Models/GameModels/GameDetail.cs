@@ -22,13 +22,13 @@ namespace RentAMovie.Models.GameModels
 
         [Display(Name = "Description")]
         public string GameDescription { get; set; }
-        public DateTime Year { get; set; }
+
+        [Display(Name ="Release Year")]
+        public int Year { get; set; }
 
         public List<GameRatingListItem> Ratings { get; set; } = new List<GameRatingListItem>();
         public List<RentalListItem> Rentals { get; set; } = new List<RentalListItem>();
 
-        public DateTimeOffset CreatedUtc { get; set; }
-        public DateTimeOffset? Modified { get; set; }
 
     }
 }

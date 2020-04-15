@@ -20,5 +20,9 @@ namespace RentAMovie.Models.GameModels
 
         [Display(Name = "Description")]
         public string GameDescription { get; set; }
+
+        [Range(1960, 2050)]
+        [Display(Name = "Release Year")]
+        public int Year { get; set; }
     }
 }

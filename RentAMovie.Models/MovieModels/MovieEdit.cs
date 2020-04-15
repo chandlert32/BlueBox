@@ -18,5 +18,8 @@ namespace RentAMovie.Models.MovieModels
 
         [Display(Name = "Description")]
         public string MovieDescription { get; set; }
+
+        [Display(Name = "Release Year")]
+        public int Year { get; set; }
     }
 }

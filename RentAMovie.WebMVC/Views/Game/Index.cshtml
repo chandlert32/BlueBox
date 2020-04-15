@@ -39,6 +39,9 @@
             @Html.DisplayNameFor(model => model.GameTitle)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Year)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Genre)
         </th>
         <th>
@@ -60,6 +63,9 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.GameTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Genre)

@@ -24,10 +24,6 @@ namespace RentAMovie.Data
         [Required]
         public string Email { get; set; }
 
-        //public DateTime Birthday? { get; set; }
-
         public virtual ICollection<Rental> Rentals { get; set; }
-
-        public DateTimeOffset CreatedUtc { get; set; }
     }
 }

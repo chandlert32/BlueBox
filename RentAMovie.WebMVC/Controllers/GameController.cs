@@ -22,6 +22,7 @@ namespace RentAMovie.WebMVC.Controllers
         }
 
         // GET: Game/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -29,6 +30,7 @@ namespace RentAMovie.WebMVC.Controllers
 
         // POST: Game/Create
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(GameCreate model)
         {
@@ -54,6 +56,7 @@ namespace RentAMovie.WebMVC.Controllers
         }
 
         // GET: Game/edit
+        [Authorize]
         public async Task<ActionResult> Edit(int id)
         {
             var service = GetGameService();
@@ -74,6 +77,7 @@ namespace RentAMovie.WebMVC.Controllers
 
         // POST: Game/edit
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, GameEdit model)
         {
@@ -100,7 +104,6 @@ namespace RentAMovie.WebMVC.Controllers
 
         // GET: Game/Rate/id
         [HttpGet]
-        [Authorize]
         public async Task<ActionResult> Rate(int id)
         {
             var service = GetGameService();
@@ -112,7 +115,6 @@ namespace RentAMovie.WebMVC.Controllers
 
         // POST: Game/Rate/id
         [HttpPost]
-        [Authorize]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Rate(GameRatingCreate model)
         {
@@ -129,6 +131,7 @@ namespace RentAMovie.WebMVC.Controllers
         }
 
         // GET: Delete
+        [Authorize]
         [ActionName("Delete")]
         public async Task<ActionResult> Delete(int id)
         {
@@ -140,6 +143,7 @@ namespace RentAMovie.WebMVC.Controllers
 
         // POST: Delete
         [HttpPost]
+        [Authorize]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeletePost(int id)

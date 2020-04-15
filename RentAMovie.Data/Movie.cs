@@ -21,8 +21,8 @@ namespace RentAMovie.Data
         [Required]
         public string MovieDescription { get; set; }
 
-        //public DateTime Year { get;set; }
-
+        [Required]
+        public int Year { get; set; }
         public double AverageRating
         {
             get
@@ -36,7 +36,5 @@ namespace RentAMovie.Data
 
         public virtual ICollection<MovieRating> Ratings { get; set; }
         public virtual ICollection<Rental> Rentals { get; set; }
-        public DateTimeOffset CreatedUtc { get; set; }
-        public DateTimeOffset? Modified { get; set; }
     }
 }
