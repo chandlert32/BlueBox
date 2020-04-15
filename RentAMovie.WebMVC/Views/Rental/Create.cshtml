@@ -5,8 +5,9 @@
 }
 
 <style type="text/css">
-    h2 {
+    h1 {
         color: #fff;
+        font-weight: bold;
     }
 
     body {
@@ -30,7 +31,7 @@
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>Add a new rental</h4>
+        <h5>Add a new rental</h5>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">

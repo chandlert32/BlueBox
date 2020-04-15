@@ -9,52 +9,69 @@
         background-image: url('../../Content/Assets/blueback.jpg');
         background-size: cover;
         background-repeat: no-repeat;
+        background-color: transparent;
         position: relative;
         color: #fff;
     }
 
-    table {
-        text-decoration: none;
+    #paragraph {
+        margin: 5% 30% 0% 30%;
+    }
+
+    form {
+        background-color: grey;
+        padding: 10px 5px;
+        border-radius: 10px 10px;
+        border-style: solid;
     }
 </style>
+<br />
 
-<h1>@ViewBag.Title.</h1>
+<h1 style="text-align:center">REGISTER</h1>
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <h5>Already have an account?</h5>
-    <div class="btn btn-default">
-        @Html.ActionLink("Log In", "Login")
-    </div>
-    <hr />
-    <br />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+<div id="paragraph" style="text-align:center">
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <h5>Already have an account?</h5>
+        <div class="btn btn-default">
+            @Html.ActionLink("Log In", "Login")
         </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+
+        <hr />
+        <br />
+
+        <h3>New User</h3>
+
+        <br/>
+
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+        <div class="form-group">
+            @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
+        <div class="form-group">
+            @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+            </div>
         </div>
-    </div>
-    <br />
-}
+        <div class="form-group">
+            <div class="col-md-12">
+                <input type="submit" class="btn btn-default" value="Register" />
+            </div>
+        </div>
+        <br />
+    }
+</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
