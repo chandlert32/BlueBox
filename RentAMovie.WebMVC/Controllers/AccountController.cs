@@ -180,6 +180,7 @@ namespace RentAMovie.WebMVC.Controllers
         //NEW METHODS
         [AllowAnonymous]
         [HttpGet]
+        [Authorize]
         public ActionResult RegisterRole()
         {
             ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name");

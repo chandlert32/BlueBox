@@ -18,13 +18,15 @@ namespace RentAMovie.WebMVC.Controllers
         }
 
         // GET: All Role
+        [Authorize]
         public ActionResult Index()
         {
             var Roles = context.Roles.ToList();
             return View(Roles);
         }
 
-        //CREAte a new role
+        //create a new role
+        [Authorize]
         public ActionResult Create()
         {
             var Role = new IdentityRole();
@@ -33,6 +35,7 @@ namespace RentAMovie.WebMVC.Controllers
 
         //create a new role 
         [HttpPost]
+        [Authorize]
         public ActionResult Create(IdentityRole Role)
         {
             context.Roles.Add(Role);

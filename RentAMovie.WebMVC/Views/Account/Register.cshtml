@@ -15,7 +15,8 @@
     }
 
     #paragraph {
-        margin: 5% 30% 0% 30%;
+        margin: 5% 26% 5% 26%;
+        text-align:center;
     }
 
     form {
@@ -29,7 +30,7 @@
 
 <h1 style="text-align:center">REGISTER</h1>
 
-<div id="paragraph" style="text-align:center">
+<div id="paragraph" >
     @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
     {
         @Html.AntiForgeryToken()

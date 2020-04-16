@@ -5,23 +5,26 @@
 }
 
 <style type="text/css">
-    h1 {
-        color: #fff;
-    }
-
     body {
         background-image: url('../../Content/Assets/blueback.jpg');
         background-size: cover;
         background-repeat: no-repeat;
+        background-color: transparent;
         position: relative;
+        color: #fff;
     }
 
-    table {
-        text-decoration: none;
+    #paragraph {
+        margin: 5% 28% 0% 28%;
+        background-color: grey;
+        padding: 10px 5px;
+        border-radius: 10px 10px;
+        border-style: solid;
+        color: black;
     }
 </style>
 
-<br/>
+<br />
 
 <h1>Create A New Role</h1>
 <div class="btn btn-default">
@@ -31,25 +34,21 @@
 <br />
 <br />
 <br />
-<style type="text/css">
-    #tbrole, .c {
-        border: double;
+<div id="paragraph" style="text-align:center">
+    @using (Html.BeginForm())
+    {
+        <table class="table table-hover table-bordered" style="background-color: #fff">
+            <tr>
+                <td class="c">Create a new user role:</td>
+                <td class="c">
+                    @Html.EditorFor(m => m.Name)
+                </td>
+
+            </tr>
+        </table>
+        <input type="submit" style="color:black" value="Create" />
     }
-</style>
-
-@using (Html.BeginForm())
-{
-    <table class="table table-hover table-bordered" style="background-color: #fff">
-        <tr>
-            <td class="c">Create a new user role:</td>
-            <td class="c">
-                @Html.EditorFor(m => m.Name)
-            </td>
-
-        </tr>
-    </table>
-    <input type="submit" style="color:black" value="Create" />
-}
+</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
