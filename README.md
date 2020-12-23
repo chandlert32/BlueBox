@@ -1,3 +1,5 @@
+<img width="312" alt="Screen Shot 2020-12-22 at 9 57 38 PM" src="https://user-images.githubusercontent.com/60196779/102954105-c83f9b80-44a0-11eb-8385-b219a1aee9a7.png">
+
 # BlueBox Application
 
 Game and Movie Rental Service - EFA Solo Red Badge Project
